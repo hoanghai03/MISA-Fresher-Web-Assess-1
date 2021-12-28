@@ -1,0 +1,12 @@
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\bin\Debug\net5.0\MISA.Fresher.Core.deps.json
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\bin\Debug\net5.0\MISA.Fresher.Core.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\bin\Debug\net5.0\ref\MISA.Fresher.Core.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\bin\Debug\net5.0\MISA.Fresher.Core.pdb
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.csproj.AssemblyReference.cache
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.AssemblyInfoInputs.cache
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.AssemblyInfo.cs
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.csproj.CoreCompileInputs.cache
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\ref\MISA.Fresher.Core.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.pdb
