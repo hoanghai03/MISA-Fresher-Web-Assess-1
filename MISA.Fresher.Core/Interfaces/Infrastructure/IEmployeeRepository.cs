@@ -11,42 +11,32 @@ namespace MISA.Fresher.Core.Interfaces.Infrastructure
     /// Interface Employee
     /// createdBy NHHai 28/12/2021
     /// </summary>
-    public interface IEmployeeRepository
+    public interface IEmployeeRepository : IBaseRepository<Employee>
     {
         /// <summary>
-        /// Hàm lấy giá trị nhân viên
-        /// createdBy NHHAi 28/12/2021
+        /// Lấy mã lớn nhất trong database
         /// </summary>
-        /// <returns>Trả về danh sách nhân viên</returns>
-        IEnumerable<Employee> Get();
+        /// <returns>trả về mã lớn nhất trong db</returns>
+        /// createdBy NHHAi 2/1/2022
+        public string GetMaxCodeRepository();
+
         /// <summary>
-        /// Hàm lấy giá trị nhân viên theo id
-        /// createdBy NHHAi 28/12/2021
+        /// 
         /// </summary>
-        ///  <param name="entityId">mã id</param>
-        /// <returns>Trả về  nhân viên theo id</returns>
-        public IEnumerable<Employee> GetById(Guid entityId);
+        /// <param name="pageSize"></param>
+        /// <param name="pageNumber"></param>
+        /// <param name="employeeFilter"></param>
+        /// <returns></returns>
+        public DataFilter FilterRepository(int pageSize, int pageNumber, string employeeFilter);
+
+        public object Import(List<Employee> employees);
+
         /// <summary>
-        /// Hàm lấy giá trị nhân viên theo id
-        /// createdBy NHHAi 28/12/2021
+        /// Hàm xóa nhiều dữ liệu
         /// </summary>
-        /// <param name="entity">nhân viên</param>
-        /// <returns>Trả về  nhân viên theo id</returns>
-        public int Insert(Employee entity);
-        /// <summary>
-        /// Hàm xóa nhân viên
-        /// createdBy NHHAi 28/12/2021
-        /// </summary>
-        /// <param name="entityId">mã id</param>
-        /// <returns>Trả về int</returns>
-        public int Delete(Guid entityId);
-        /// <summary>
-        /// Hàm cập nhật nhân viên
-        /// createdBy NHHAi 28/12/2021
-        /// </summary>
-        ///<param name="entityId">mã id</param>
-        /// <param name="entity">nhân viên</param>
-        /// <returns>Trả về int</returns>
-        public int Update(Employee entity, Guid entityId);
+        /// <param name="employeeIds">danh sách id</param>
+        /// <returns></returns>
+        /// createdBy NHHai 10/1/2022
+        public int DeleteAllRepository(List<string> employeeIds);
     }
 }

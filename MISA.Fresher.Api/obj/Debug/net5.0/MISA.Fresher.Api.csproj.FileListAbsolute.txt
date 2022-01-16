@@ -36,3 +36,6 @@ C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Api\obj\Debug\net5.0\M
 C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Api\obj\Debug\net5.0\MISA.Fresher.Api.genruntimeconfig.cache
 C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Api\bin\Debug\net5.0\Dapper.dll
 C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Api\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Api\bin\Debug\net5.0\EPPlus.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Api\bin\Debug\net5.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Api\bin\Debug\net5.0\System.Xml.XPath.XmlDocument.dll

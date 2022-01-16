@@ -23,7 +23,7 @@ namespace MISA.Fresher.Core.Exceptions
                 var result = new
                 {
                     msgDev = "",
-                    userMsg = "",
+                    userMsg = MISA.Fresher.Core.Properties.Resources.Exception,
                     data = httpResponseException.Value,
                     moreInfo = ""
                 };
@@ -39,7 +39,7 @@ namespace MISA.Fresher.Core.Exceptions
                 var result = new
                 {
                     msgDev = "",
-                    userMsg = "",
+                    userMsg = MISA.Fresher.Core.Properties.Resources.Exception,
                     data = DBNull.Value,
                     moreInfo = ""
                 };

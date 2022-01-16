@@ -11,25 +11,7 @@ namespace MISA.Fresher.Core.Interfaces.Service
     /// interface customer service
     /// createdBy NHHai 28/12/2021
     /// </summary>
-    public interface ICustomerService
+    public interface ICustomerService : IBaseService<Customer>
     {
-        /// <summary>
-        /// hàm thêm mới khách hàng
-        /// </summary>
-        /// <param name="entity">khách hàng</param>
-        /// <returns>trả về int</returns>
-        /// createdBy NHHai 28/12/2021
-        public int? Insert(Customer entity);
-
-        /// <summary>
-        /// cập nhật khách hàng
-        /// </summary>
-        /// <param name="entity">khách hàng</param>
-        /// <param name="entityId">mã khách hàng</param>
-        /// <returns>trả về int</returns>
-        /// createdBy NHHai 28/12/2021
-        public int? Update(Customer entity, Guid entityId);
-
-
     }
 }

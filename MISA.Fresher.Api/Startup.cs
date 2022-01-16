@@ -20,6 +20,7 @@ namespace MISA.Fresher.Api
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,6 +32,9 @@ namespace MISA.Fresher.Api
         public void ConfigureServices(IServiceCollection services)
         {
 
+            // Enable CORS
+            services.AddCors();
+
             services.AddControllers(options =>
             {
                 options.Filters.Add<HttpResponseExceptionFilter>();
@@ -39,13 +43,14 @@ namespace MISA.Fresher.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.Fresher.Api", Version = "v1" });
             });
-
             // config DI
+
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IEmployeeService, EmployeeService>();
 
-            services.AddScoped<ICustomerService, CustomerService>();
-            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,8 +65,11 @@ namespace MISA.Fresher.Api
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            // Enable CORS
+            app.UseCors(options => options.AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader());
 
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

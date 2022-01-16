@@ -13,3 +13,5 @@ C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Deb
 C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Debug\net5.0\MISA.Fresher.Infrastructure.dll
 C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Debug\net5.0\ref\MISA.Fresher.Infrastructure.dll
 C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Debug\net5.0\MISA.Fresher.Infrastructure.pdb
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Debug\net5.0\MISA.Fresher.Infrastructure.Properties.Resources.resources
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Debug\net5.0\MISA.Fresher.Infrastructure.csproj.GenerateResource.cache
