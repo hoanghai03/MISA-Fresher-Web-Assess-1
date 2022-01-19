@@ -110,6 +110,12 @@ namespace MISA.Fresher.Core.Services
                                 if (exportExcel.Length > 0)
                                 {
                                     workSheet.Cells[recordIndex, count].Value = property.GetValue(employee);
+                                    if(property.PropertyType == typeof(DateTime?))
+                                    {
+                                        workSheet.Cells[recordIndex, count].Style.Numberformat.Format = "dd/mm/yyyy";
+                                        // căn giữa
+                                        workSheet.Cells[recordIndex, count].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                                    }
                                     workSheet.Cells[recordIndex, count].Style.Border.Top.Style = ExcelBorderStyle.Thin;
                                     workSheet.Cells[recordIndex, count].Style.Border.Left.Style = ExcelBorderStyle.Thin;
                                     workSheet.Cells[recordIndex, count].Style.Border.Right.Style = ExcelBorderStyle.Thin;
