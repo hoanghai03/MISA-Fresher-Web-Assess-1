@@ -114,21 +114,5 @@ namespace MISA.Fresher.Api.Controllers
                 throw new HttpResponseException(ex.Value);
             }
         }
-        // ToDo: đang làm
-        [HttpPost("import")]
-        public async Task<IActionResult> Import(IFormFile formFile)
-        {
-            try
-            {
-                var res = await _employee.Import(formFile);
-                return Ok(res);
-            }
-            catch (HttpResponseException ex)
-            {
-
-                throw new HttpResponseException(ex.Value);
-            }
-        }
-
     }
 }

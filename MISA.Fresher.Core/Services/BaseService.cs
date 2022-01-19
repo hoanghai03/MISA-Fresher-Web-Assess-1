@@ -14,8 +14,6 @@ namespace MISA.Fresher.Core.Services
 {
     public class BaseService<T> : IBaseService<T>
     {
-        // danh sách lỗi
-        protected List<string> errorMsgs = new List<string>();
         IBaseRepository<T> _baseRepository;
         public BaseService(IBaseRepository<T> baseRepository)
         {
@@ -77,7 +75,13 @@ namespace MISA.Fresher.Core.Services
             try
             {
                 // validate dữ liệu chung
-                bool isValid = ValidateObject(entity, null);
+                bool isValid = DoValidate(entity, null);
+
+                // validate dữ liệu riêng
+                if (isValid)
+                {
+                    isValid = ValidateCustom(entity);
+                }
                 // gọi đến repository
                 if (isValid)
                 {
@@ -97,7 +101,12 @@ namespace MISA.Fresher.Core.Services
             try
             {
                 // validate dữ liệu chung
-                bool isValid = ValidateObject(entity, entityId);
+                bool isValid = DoValidate(entity, entityId);
+                // validate dữ liệu riêng
+                if (isValid)
+                {
+                    isValid = ValidateCustom(entity);
+                }
                 // gọi đến repository
                 if (isValid)
                 {
@@ -112,27 +121,9 @@ namespace MISA.Fresher.Core.Services
             }
         }
 
-        public bool ValidateObject(T entity, Guid? entityId)
-        {
-            try
-            {
-                var isValid = DoValidate(entity, entityId);
-                if (errorMsgs.Count > 0)
-                {
-                    isValid = false;
-                    throw new HttpResponseException(errorMsgs);
-                }
-                return isValid;
-            }
-            catch (HttpResponseException ex)
-            {
-                throw new HttpResponseException(ex.Value);
-            }
-        }
-
         protected bool DoValidate(T entity, Guid? entityId)
         {
-            List<string> ErrorMsgs = new List<string>();
+            List<string> errorMsgs = new List<string>();
             var isValid = true;
             var properties = typeof(T).GetProperties();
             foreach (var property in properties)
@@ -212,16 +203,11 @@ namespace MISA.Fresher.Core.Services
 
                 }
             }
-            isValid = ValidateCustom(entity);
+            
             if (errorMsgs.Count() > 0)
             {
-                var propError = entity.GetType().GetProperty("ErrorMsgs");
-                if(propError != null)
-                {
-                    propError.SetValue(entity, errorMsgs);
-                }
-                /*errorMsgs = ErrorMsgs;*/
                 isValid = false;
+                throw new HttpResponseException(errorMsgs);
             }
             return isValid;
         }

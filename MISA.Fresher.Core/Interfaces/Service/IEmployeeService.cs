@@ -34,8 +34,6 @@ namespace MISA.Fresher.Core.Interfaces.Service
         /// createdBy NHHai 8/1/2022
         public DataFilter FilterService(int pageSize, int pageNumber, string employeeFilter);
 
-        Task<object> Import(IFormFile formFile);
-
         /// <summary>
         /// Hàm validate dữ liệu và gọi đến repository
         /// </summary>
@@ -44,6 +42,14 @@ namespace MISA.Fresher.Core.Interfaces.Service
         /// createdBy NHHAi 10/1/2022
         public int DeleteAllService(List<string> employeeIds);
 
+        /// <summary>
+        /// Hàm xuất excel
+        /// </summary>
+        /// <param name="pageSize">kích thước trang</param>
+        /// <param name="pageNumber">vị trí trang</param>
+        /// <param name="employeeFilter">chuỗi filter</param>
+        /// <returns>stream</returns>
+        /// createdBy NHHAi 19/1/2022
         public Stream ExportListUsingEPPlus(int pageSize, int pageNumber, string employeeFilter);
     }
 }

@@ -29,7 +29,6 @@ namespace MISA.Fresher.Core.Interfaces.Infrastructure
         /// <returns></returns>
         public DataFilter FilterRepository(int pageSize, int pageNumber, string employeeFilter);
 
-        public object Import(List<Employee> employees);
 
         /// <summary>
         /// Hàm xóa nhiều dữ liệu

@@ -165,6 +165,7 @@ namespace MISA.Fresher.Core.Entities
         /// </summary>
         public Gender? Gender { get; set; }
 
+        // giới tính
         [Ignore]
         [ExportExcel]
         [PropertyName("Giới tính")]
@@ -184,26 +185,30 @@ namespace MISA.Fresher.Core.Entities
                 }
             }
         }
+        // số điện thoại
         public string PhoneNumber { get; set; }
+        // điện thoại bàn
         public string TelephoneNumber { get; set; }
 
+        // số tài khoản
         [ExportExcel]
         [PropertyName("Số tài khoản")]
         public string BankAccountNumber { get; set; }
 
+        // tên ngân hàng
         [ExportExcel]
         [PropertyName("Tên ngân hàng")]
         public string BankName { get; set; }
 
+        // chi nhánh ngân hàng
         [ExportExcel]
         [PropertyName("Chi nhánh ngân hàng")]
         public string BankBranchName { get; set; }
 
+        // chức vụ
         [ExportExcel]
         [PropertyName("Chức danh")]
         public string PositionName { get; set; }
 
-        [Ignore]
-        public List<string> ErrorMsgs { get; set; } = new List<string>();
     }
 }

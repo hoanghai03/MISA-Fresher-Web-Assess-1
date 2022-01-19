@@ -61,6 +61,12 @@ namespace MISA.Fresher.Core.Interfaces.Infrastructure
         /// createdBy NHHai 1/1/2021
         public int CheckCodeDuplicate(string entityCode);
 
+        /// <summary>
+        /// Lấy mã code
+        /// </summary>
+        /// <param name="entityId">mã id</param>
+        /// <returns>mã code</returns>
+        /// createdBy NHHAi 19/1/2022
         public string GetCode(Guid? entityId);
 
         

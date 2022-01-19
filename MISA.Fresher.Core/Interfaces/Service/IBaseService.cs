@@ -52,11 +52,6 @@ namespace MISA.Fresher.Core.Interfaces.Service
         /// createdBy NHHai 28/12/2021
         public int? UpdateService(T entity, Guid entityId);
 
-        /// <summary>
-        /// hàm validate dữ liệu khi thêm mới hoặc cập nhật
-        /// </summary>
-        /// <returns>trả về: true-nếu dữ liệu không lỗi;false- dữ liệu lỗi</returns>
-        /// createdBy NHHAi 1/1/2022
-        public bool ValidateObject(T entity,Guid? entityId);
+
     }
 }
