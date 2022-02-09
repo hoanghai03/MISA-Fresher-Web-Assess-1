@@ -41,9 +41,9 @@ namespace MISA.Fresher.Api.Controllers
                 // trả về mã mới
                 return newEmployeeCode;
             }
-            catch (Exception ex)
+            catch (HttpResponseException ex)
             {
-                throw ex;
+                throw new HttpResponseException(ex.Value);
             }
         }
 
@@ -100,13 +100,23 @@ namespace MISA.Fresher.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Hàm xuất khẩu dữ liệu ra excel
+        /// </summary>
+        /// <param name="pageSize">kích thước trang</param>
+        /// <param name="pageNumber">trang hiện tại</param>
+        /// <param name="employeeFilter">filter</param>
+        /// <returns>file excel</returns>
+        /// createdBy NHHAi 20/1/2022
         [HttpGet("export")]
-        public IActionResult ExportToExcel(int pageSize, int pageNumber, string employeeFilter)
+        public IActionResult ExportToExcel()
         {
             try
             {
-                var res = _employee.ExportListUsingEPPlus(pageSize, pageNumber, employeeFilter);
+                var res = _employee.ExportListUsingEPPlus();
+                // đặt tên file excel
                 string excelName = $"Danh-sách-nhân-viên-{DateTime.Now.ToString("yyyyMMddHHmmssfff")}.xlsx";
+                // file
                 return File(res, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelName);
             }
             catch (HttpResponseException ex)

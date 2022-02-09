@@ -45,11 +45,8 @@ namespace MISA.Fresher.Core.Interfaces.Service
         /// <summary>
         /// Hàm xuất excel
         /// </summary>
-        /// <param name="pageSize">kích thước trang</param>
-        /// <param name="pageNumber">vị trí trang</param>
-        /// <param name="employeeFilter">chuỗi filter</param>
         /// <returns>stream</returns>
         /// createdBy NHHAi 19/1/2022
-        public Stream ExportListUsingEPPlus(int pageSize, int pageNumber, string employeeFilter);
+        public Stream ExportListUsingEPPlus();
     }
 }

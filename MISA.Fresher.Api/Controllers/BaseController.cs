@@ -34,6 +34,10 @@ namespace MISA.Fresher.Api.Controllers
                 var res = _baseService.GetService();
                 return Ok(res);
             }
+            catch (HttpResponseException ex)
+            {
+                throw new HttpResponseException(ex.Value);
+            }
             catch (Exception ex)
             {
                 return StatusCode((int)HttpStatusCode.InternalServerError, ex.Data);

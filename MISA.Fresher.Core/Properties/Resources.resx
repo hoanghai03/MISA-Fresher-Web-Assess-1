@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkDuplicate" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="DateMessage" xml:space="preserve">
     <value>{0} không được lớn hơn ngày hiện tại!</value>
@@ -140,6 +140,9 @@
   </data>
   <data name="FormatCode" xml:space="preserve">
     <value>{0} không đúng định dạng!</value>
+  </data>
+  <data name="ListEmployee" xml:space="preserve">
+    <value>Danh Sách Nhân viên</value>
   </data>
   <data name="NullId" xml:space="preserve">
     <value>Không có id</value>

@@ -51,10 +51,10 @@ namespace MISA.Fresher.Infrastructure.Repository
                     transaction.Commit();
                     return rowEffects;
                 }
-                catch (Exception ex)
+                catch (HttpResponseException ex)
                 {
                     transaction.Rollback();
-                    throw new HttpResponseException(ex.Data);
+                    throw new HttpResponseException(ex.Value);
                 }
             }
         }
@@ -72,9 +72,9 @@ namespace MISA.Fresher.Infrastructure.Repository
                     return entities;
 
                 }
-                catch (Exception ex)
+                catch (HttpResponseException ex)
                 {
-                    throw new HttpResponseException(ex.Data);
+                    throw new HttpResponseException(ex.Value);
                 }
             }
         }
@@ -95,9 +95,9 @@ namespace MISA.Fresher.Infrastructure.Repository
                     return entities;
 
                 }
-                catch (Exception ex)
+                catch (HttpResponseException ex)
                 {
-                    throw new HttpResponseException(ex.Data);
+                    throw new HttpResponseException(ex.Value);
                 }
             }
         }
@@ -150,9 +150,9 @@ namespace MISA.Fresher.Infrastructure.Repository
                 }
 
             }
-            catch (Exception ex)
+            catch (HttpResponseException ex)
             {
-                throw new HttpResponseException(ex.Data);
+                throw new HttpResponseException(ex.Value);
             }
         }
 
@@ -194,17 +194,17 @@ namespace MISA.Fresher.Infrastructure.Repository
                         // trả về kết quả khi thêm mơi thành công
                         return rowEffects;
                     }
-                    catch (Exception)
+                    catch (HttpResponseException ex)
                     {
                         transaction.Rollback();
-                        throw;
+                        throw new HttpResponseException(ex.Value);
                     }
                 }
 
             }
-            catch (Exception ex)
+            catch (HttpResponseException ex)
             {
-                throw new HttpResponseException(ex.Data);
+                throw new HttpResponseException(ex.Value);
             }
         }
 
@@ -224,9 +224,9 @@ namespace MISA.Fresher.Infrastructure.Repository
                 }
 
             }
-            catch (Exception ex)
+            catch (HttpResponseException ex)
             {
-                throw new HttpResponseException(ex.Data);
+                throw new HttpResponseException(ex.Value);
             }
         }
 
@@ -245,9 +245,9 @@ namespace MISA.Fresher.Infrastructure.Repository
                     return entities;
                 }
             }
-            catch (Exception ex)
+            catch (HttpResponseException ex)
             {
-                throw new HttpResponseException(ex.Data);
+                throw new HttpResponseException(ex.Value);
             }
         }
     }

@@ -63,10 +63,9 @@ namespace MISA.Fresher.Core.Services
                 return res;
 
             }
-            catch (Exception ex)
+            catch (HttpResponseException ex)
             {
-
-                throw new HttpResponseException(ex.Data);
+                throw new HttpResponseException(ex.Value);
             }
         }
 
@@ -168,13 +167,13 @@ namespace MISA.Fresher.Core.Services
                         // lấy mã nhân viên tương ứng với id
                         string checkEntity = _baseRepository.GetCode(entityId);
                         // so sánh
-                        if (String.Compare(propertyValue.ToString().Trim(), checkEntity, true) != 0)
+                        if (String.Compare(propertyValue.ToString().Trim(), checkEntity, true) == 0)
                         {
                             // nếu khác nhau thì gán giá trị cho checkDuplicate
                             checkDuplicate = Int32.Parse(Properties.Resources.checkDuplicate);
                         }
                     }
-                    if (((checkDuplicate != 0 && entityId == null) || (checkDuplicate > 1 && entityId != null)))
+                    if (checkDuplicate != 0)
                     {
                         errorMsgs.Add(string.Format(Properties.Resources.DuplicateCode, propertyDisplay));
                     }

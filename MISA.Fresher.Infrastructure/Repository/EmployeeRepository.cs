@@ -39,27 +39,38 @@ namespace MISA.Fresher.Infrastructure.Repository
                     {
                         DynamicParameters parameters = new DynamicParameters();
                         // điền dấu '' cho mỗi phần tử id
-                        var ids = string.Join(",", employeeIds.Select(item => "'" + item + "'"));
-                        // add param
-                        parameters.Add("ids", ids);
-
-                        // thực hiện xóa
-                        var res = mySqlConnector.Execute($"Proc_DeleteEmployeeChecked",param: parameters,transaction,commandType: CommandType.StoredProcedure);
+                        //var ids = string.Join(",", employeeIds.Select(item => "'" + item + "'"));
+                        //// add param
+                        //parameters.Add("ids", ids);
+                        //// thực hiện xóa
+                        //var res = mySqlConnector.Execute($"Proc_DeleteEmployeeChecked", param: parameters, transaction, commandType: CommandType.StoredProcedure);
+                        var count = 1;
+                        var ids = "";
+                        foreach (var id in employeeIds)
+                        {
+                            //add pẩm
+                            parameters.Add($"@{count}", id);
+                            ids += $"@{count},";
+                            count++;
+                        }
+                        //xóa dấu "," ở cuối chuỗi
+                        ids = ids.Substring(0,ids.Length - 1);
+                        // thực hiện xóa 
+                        var res = mySqlConnector.Execute($"DELETE FROM Employee WHERE EmployeeID IN ({ids}) ", param: parameters, transaction);
                         //commit
                         transaction.Commit();
                         return res;
                     }
-                    catch (Exception)
+                    catch (HttpResponseException ex)
                     {
                         transaction.Rollback();
-                        throw;
+                        throw new HttpResponseException(ex.Value);
                     }
                 }
             }
-            catch (Exception)
+            catch (HttpResponseException ex)
             {
-
-                throw;
+                throw new HttpResponseException(ex.Value);
             }
         }
 
@@ -129,9 +140,9 @@ namespace MISA.Fresher.Infrastructure.Repository
                 }
 
             }
-            catch (Exception ex)
+            catch (HttpResponseException ex)
             {
-                throw new HttpResponseException(ex.Data);
+                throw new HttpResponseException(ex.Value);
             }
         }
 
@@ -148,9 +159,9 @@ namespace MISA.Fresher.Infrastructure.Repository
                 }
 
             }
-            catch (Exception ex)
+            catch (HttpResponseException ex)
             {
-                throw new HttpResponseException(ex.Data);
+                throw new HttpResponseException(ex.Value);
             }
         }
 
@@ -166,10 +177,9 @@ namespace MISA.Fresher.Infrastructure.Repository
                 }
                 return count;
             }
-            catch (Exception)
+            catch (HttpResponseException ex)
             {
-
-                throw;
+                throw new HttpResponseException(ex.Value);
             }
         }
     }

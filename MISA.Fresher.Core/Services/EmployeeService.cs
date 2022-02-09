@@ -52,95 +52,99 @@ namespace MISA.Fresher.Core.Services
             }
         }
 
-        public Stream ExportListUsingEPPlus(int pageSize, int pageNumber, string employeeFilter)
+        public Stream ExportListUsingEPPlus()
         {
             try
             {
                 // Lấy danh sách nhân viên
-                DataFilter employees = FilterService(pageSize, pageNumber, employeeFilter);
-                if(employees.TotalRecord != 0)
+                var employees = _employee.Get();
+
+                var stream = new MemoryStream();
+
+                using (ExcelPackage excel = new ExcelPackage(stream))
                 {
-                    var stream = new MemoryStream();
 
-                    using (ExcelPackage excel = new ExcelPackage(stream))
+                    var workSheet = excel.Workbook.Worksheets.Add("Sheet1");
+                    workSheet.TabColor = System.Drawing.Color.Black;
+                    workSheet.DefaultRowHeight = (int)Enum.Excel.DefaultRowHeight;
+                    // title danh sách nhân viên
+                    workSheet.Cells["E2"].Value = Properties.Resources.ListEmployee;
+                    workSheet.Cells["E2"].Style.Font.Name = "B Zar";
+                    workSheet.Cells["E2"].Style.Font.Size = (int)Enum.Excel.Font_Size;
+                    workSheet.Cells["E2"].Style.Font.Bold = true;
+                    workSheet.Cells["E2:H2"].Merge = true;
+                    //Header of table  
+                    workSheet.Row((int)Enum.Excel.Header).Height = (int)Enum.Excel.Height;
+                    workSheet.Row((int)Enum.Excel.Header).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    workSheet.Row((int)Enum.Excel.Header).Style.Font.Bold = true;
+                    var properties = typeof(Employee).GetProperties();
+                    int count = (int)Enum.Excel.Count;
+                    foreach (var property in properties)
                     {
+                        var propName = property.GetCustomAttributes(typeof(PropertyName), true);
+                        var exportExcel = property.GetCustomAttributes(typeof(ExportExcel), true);
+                        var propertyDisplay = "";
+                        // lấy tên PropertyName
+                        if (propName.Length > 0)
+                        {
+                            propertyDisplay = (propName[0] as PropertyName).name;
+                        }
+                        if (exportExcel.Length > 0)
+                        {
+                            workSheet.Cells[(int)Enum.Excel.Header, count].Value = propertyDisplay;
+                            workSheet.Cells[(int)Enum.Excel.Header, count].Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                            workSheet.Cells[(int)Enum.Excel.Header, count].Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                            workSheet.Cells[(int)Enum.Excel.Header, count].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                            workSheet.Cells[(int)Enum.Excel.Header, count].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                            count++;
+                        }
 
-                        var workSheet = excel.Workbook.Worksheets.Add("Sheet1");
-                        workSheet.TabColor = System.Drawing.Color.Black;
-                        workSheet.DefaultRowHeight = (int)Enum.Excel.DefaultRowHeight;
-                        //Header of table  
-                        workSheet.Row(1).Height = (int)Enum.Excel.Height;
-                        workSheet.Row(1).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                        workSheet.Row(1).Style.Font.Bold = true;
-                        var properties = typeof(Employee).GetProperties();
-                        int count = (int)Enum.Excel.Count;
+                    }
+                    int length = count;
+                    //Body of table  
+                    //  
+                    int recordIndex = (int)Enum.Excel.Record_Index;
+                    foreach (var employee in employees)
+                    {
+                        count = (int)Enum.Excel.Count;
                         foreach (var property in properties)
                         {
-                            var propName = property.GetCustomAttributes(typeof(PropertyName), true);
+                            var propertyName = property.Name;
                             var exportExcel = property.GetCustomAttributes(typeof(ExportExcel), true);
                             var propertyDisplay = "";
-                            // lấy tên PropertyName
-                            if (propName.Length > 0)
-                            {
-                                propertyDisplay = (propName[0] as PropertyName).name;
-                            }
                             if (exportExcel.Length > 0)
                             {
-                                workSheet.Cells[1, count].Value = propertyDisplay;
-                                workSheet.Cells[1, count].Style.Border.Top.Style = ExcelBorderStyle.Thin;
-                                workSheet.Cells[1, count].Style.Border.Left.Style = ExcelBorderStyle.Thin;
-                                workSheet.Cells[1, count].Style.Border.Right.Style = ExcelBorderStyle.Thin;
-                                workSheet.Cells[1, count].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                                workSheet.Cells[recordIndex, count].Value = property.GetValue(employee);
+                                if (property.PropertyType == typeof(DateTime?))
+                                {
+                                    workSheet.Cells[recordIndex, count].Style.Numberformat.Format = "dd/mm/yyyy";
+                                    // căn giữa
+                                    workSheet.Cells[recordIndex, count].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                                }
+                                workSheet.Cells[recordIndex, count].Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                                workSheet.Cells[recordIndex, count].Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                                workSheet.Cells[recordIndex, count].Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                                workSheet.Cells[recordIndex, count].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
                                 count++;
                             }
 
-                        }
-                        int length = count;
-                        //Body of table  
-                        //  
-                        int recordIndex = (int)Enum.Excel.Record_Index;
-                        foreach (var employee in employees.data)
-                        {
-                            count = (int)Enum.Excel.Count;
-                            foreach (var property in properties)
-                            {
-                                var propertyName = property.Name;
-                                var exportExcel = property.GetCustomAttributes(typeof(ExportExcel), true);
-                                var propertyDisplay = "";
-                                if (exportExcel.Length > 0)
-                                {
-                                    workSheet.Cells[recordIndex, count].Value = property.GetValue(employee);
-                                    if(property.PropertyType == typeof(DateTime?))
-                                    {
-                                        workSheet.Cells[recordIndex, count].Style.Numberformat.Format = "dd/mm/yyyy";
-                                        // căn giữa
-                                        workSheet.Cells[recordIndex, count].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-                                    }
-                                    workSheet.Cells[recordIndex, count].Style.Border.Top.Style = ExcelBorderStyle.Thin;
-                                    workSheet.Cells[recordIndex, count].Style.Border.Left.Style = ExcelBorderStyle.Thin;
-                                    workSheet.Cells[recordIndex, count].Style.Border.Right.Style = ExcelBorderStyle.Thin;
-                                    workSheet.Cells[recordIndex, count].Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
-                                    count++;
-                                }
 
-
-                            }
-                            recordIndex++;
                         }
-                        for (int i = 1; i < length; i++)
-                        {
-                            // format chiều ngang của cột
-                            workSheet.Column(i).AutoFit();
-                        }
-                        String folder = System.Guid.NewGuid().ToString();
-                        // Lưu file excel
-                        //excel.SaveAs(new FileInfo($@"D:\{folder}.xlsx"));
-                        excel.Save();
-                        stream.Position = 0;
-                        return excel.Stream;
+                        recordIndex++;
                     }
+                    for (int i = 1; i < length; i++)
+                    {
+                        // format chiều ngang của cột
+                        workSheet.Column(i).AutoFit();
+                    }
+                    String folder = System.Guid.NewGuid().ToString();
+                    // Lưu file excel
+                    //excel.SaveAs(new FileInfo($@"D:\{folder}.xlsx"));
+                    excel.Save();
+                    stream.Position = 0;
+                    return excel.Stream;
                 }
-                return null;
+
             }
             catch (HttpResponseException ex)
             {
@@ -186,10 +190,9 @@ namespace MISA.Fresher.Core.Services
                 // trả về mã code mới
                 return code;
             }
-            catch (Exception ex)
+            catch (HttpResponseException ex)
             {
-
-                throw new HttpResponseException(ex.Data);
+                throw new HttpResponseException(ex.Value);
             }
         }
 

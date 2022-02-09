@@ -33,11 +33,15 @@ namespace MISA.Fresher.Core.Enum
         // chiều cao
         Height = 20,
         // hàng bắt đầu của header
-        Row_Header = 1,
+/*        Row_Header = 1,*/
         //hàng bắt đầu của body
         Row_Body = 2,
         // hàng bắt đầu của bản ghi đầu tiên trong body
-        Record_Index = 2,
-        OK = 1
+        Record_Index = 6,
+        OK = 1,
+        // hàng bắt đầu của header
+        Header = 5,
+        // font chữ
+        Font_Size = 24
     }
 }

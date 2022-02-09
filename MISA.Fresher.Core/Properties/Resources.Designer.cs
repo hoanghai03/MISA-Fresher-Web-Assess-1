@@ -61,7 +61,7 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2.
+        ///   Looks up a localized string similar to 0.
         /// </summary>
         internal static string checkDuplicate {
             get {
@@ -129,6 +129,15 @@ namespace MISA.Fresher.Core.Properties {
         internal static string FormatCode {
             get {
                 return ResourceManager.GetString("FormatCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Danh Sách Nhân viên.
+        /// </summary>
+        internal static string ListEmployee {
+            get {
+                return ResourceManager.GetString("ListEmployee", resourceCulture);
             }
         }
         
