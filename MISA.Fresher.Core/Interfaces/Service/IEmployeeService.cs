@@ -24,29 +24,5 @@ namespace MISA.Fresher.Core.Interfaces.Service
         /// createdBy NHHAi 2/1/2022
         public string GetNewEmployeeCode();
         
-        /// <summary>
-        ///     Hàm phân trang
-        /// </summary>
-        /// <param name="pageSize">số bản ghi</param>
-        /// <param name="pageNumber">vị trí trang</param>
-        /// <param name="employeeFilter">chuỗi</param>
-        /// <returns></returns>
-        /// createdBy NHHai 8/1/2022
-        public DataFilter FilterService(int pageSize, int pageNumber, string employeeFilter);
-
-        /// <summary>
-        /// Hàm validate dữ liệu và gọi đến repository
-        /// </summary>
-        /// <param name="employeeIds">danh sách id</param>
-        /// <returns></returns>
-        /// createdBy NHHAi 10/1/2022
-        public int DeleteAllService(List<string> employeeIds);
-
-        /// <summary>
-        /// Hàm xuất excel
-        /// </summary>
-        /// <returns>stream</returns>
-        /// createdBy NHHAi 19/1/2022
-        public Stream ExportListUsingEPPlus();
     }
 }

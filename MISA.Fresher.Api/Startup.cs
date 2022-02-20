@@ -35,10 +35,12 @@ namespace MISA.Fresher.Api
             // Enable CORS
             services.AddCors();
 
-            services.AddControllers(options =>
+            services.AddControllers(
+                options =>
             {
                 options.Filters.Add<HttpResponseExceptionFilter>();
-            });
+            }
+            );
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.Fresher.Api", Version = "v1" });
@@ -47,6 +49,13 @@ namespace MISA.Fresher.Api
 
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IEmployeeService, EmployeeService>();
+
+            services.AddScoped<ISupplierRepository, SupplierRepository>();
+            services.AddScoped<ISupplierService, SupplierService>();
+
+            services.AddScoped<IAccountRepository, AccountRepository>();
+            services.AddScoped<IAccountService, AccountService>();
+
 
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));

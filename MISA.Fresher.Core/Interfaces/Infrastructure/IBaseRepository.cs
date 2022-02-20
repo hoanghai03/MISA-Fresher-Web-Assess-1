@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MISA.Fresher.Core.Entities;
+using MISA.Fresher.Core.Entities.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -69,6 +71,28 @@ namespace MISA.Fresher.Core.Interfaces.Infrastructure
         /// createdBy NHHAi 19/1/2022
         public string GetCode(Guid? entityId);
 
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageSize"></param>
+        /// <param name="pageNumber"></param>
+        /// <param name="employeeFilter"></param>
+        /// <returns></returns>
+        public DataFilter<T> FilterRepository(PaginationRequest paginationRequest);
+
+        /// <summary>
+        /// Hàm xóa nhiều dữ liệu
+        /// </summary>
+        /// <param name="employeeIds">danh sách id</param>
+        /// <returns></returns>
+        /// createdBy NHHai 10/1/2022
+        public int DeleteAllRepository(List<string> entityIds);
+
+        /// <summary>
+        /// Lấy mã lớn nhất trong database
+        /// </summary>
+        /// <returns>trả về mã lớn nhất trong db</returns>
+        /// createdBy NHHAi 2/1/2022
+        public string GetMaxCodeRepository();
     }
 }

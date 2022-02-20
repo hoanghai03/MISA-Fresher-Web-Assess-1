@@ -26,103 +26,6 @@ namespace MISA.Fresher.Infrastructure.Repository
 
         }
 
-        public int DeleteAllRepository(List<string> employeeIds)
-        {
-            try
-            {
-                using (MySqlConnection mySqlConnector = new MySqlConnection(_connectionString))
-                {
-                    mySqlConnector.Open();
-                    // transaction
-                    var transaction = mySqlConnector.BeginTransaction();
-                    try
-                    {
-                        DynamicParameters parameters = new DynamicParameters();
-                        // điền dấu '' cho mỗi phần tử id
-                        //var ids = string.Join(",", employeeIds.Select(item => "'" + item + "'"));
-                        //// add param
-                        //parameters.Add("ids", ids);
-                        //// thực hiện xóa
-                        //var res = mySqlConnector.Execute($"Proc_DeleteEmployeeChecked", param: parameters, transaction, commandType: CommandType.StoredProcedure);
-                        var count = 1;
-                        var ids = "";
-                        foreach (var id in employeeIds)
-                        {
-                            //add pẩm
-                            parameters.Add($"@{count}", id);
-                            ids += $"@{count},";
-                            count++;
-                        }
-                        //xóa dấu "," ở cuối chuỗi
-                        ids = ids.Substring(0,ids.Length - 1);
-                        // thực hiện xóa 
-                        var res = mySqlConnector.Execute($"DELETE FROM Employee WHERE EmployeeID IN ({ids}) ", param: parameters, transaction);
-                        //commit
-                        transaction.Commit();
-                        return res;
-                    }
-                    catch (HttpResponseException ex)
-                    {
-                        transaction.Rollback();
-                        throw new HttpResponseException(ex.Value);
-                    }
-                }
-            }
-            catch (HttpResponseException ex)
-            {
-                throw new HttpResponseException(ex.Value);
-            }
-        }
-
-        public DataFilter FilterRepository(int pageSize, int pageNumber, string employeeFilter)
-        {
-            try
-            {
-                using (MySqlConnection mySqlConnector = new MySqlConnection(_connectionString))
-                {
-                    // khai báo result và gán giá trị
-                    DataFilter result = new DataFilter();
-                    result.TotalPage = 0;
-                    result.TotalRecord = 0;
-                    result.data = null;
-                    DynamicParameters parameter = new DynamicParameters();
-                    parameter.Add($"EmployeeFilter", employeeFilter, DbType.String);
-                    // tính tổng số bản ghi
-                    int totalPage = 0;
-                    int totalRecord = mySqlConnector.QueryFirstOrDefault<int>($"Proc_TotalRecord", param: parameter, commandType: CommandType.StoredProcedure);
-                    if (totalRecord > 0)
-                    {
-                        var firstPage = (pageNumber - 1) * pageSize;
-                        // lấy data từ trang thứ first page 
-                        parameter.Add("@firstPage", firstPage, DbType.Int32);
-                        parameter.Add("@pageSize", pageSize, DbType.Int32);
-                        // thực hiện lấy dữ liệu
-                        var filter = mySqlConnector.Query<Employee>($"Proc_GetEmployeePaging", param: parameter, commandType: CommandType.StoredProcedure);
-                        //Phân trang
-                        if (totalRecord % pageSize > 0)
-                        {
-                            totalPage = (totalRecord / pageSize) + 1;
-                        }
-                        else
-                        {
-                            totalPage = (totalRecord / pageSize);
-                        }
-                        // gán giá trị cho result
-                        result.TotalPage = totalPage;
-                        result.TotalRecord = totalRecord;
-                        result.data = filter;
-                    }
-                    // trả về kết quả
-                    return result;
-                }
-
-            }
-            catch (HttpResponseException ex)
-            {
-                throw new HttpResponseException(ex.Value);
-            }
-        }
-
         public override Employee GetById(Guid entityId)
         {
             try
@@ -146,24 +49,7 @@ namespace MISA.Fresher.Infrastructure.Repository
             }
         }
 
-        public string GetMaxCodeRepository()
-        {
-            try
-            {
-                using (MySqlConnection mySqlConnection = new MySqlConnection(_connectionString))
-                {
-                    // Lấy mã code lớn nhất trong hệ thống
-                    var employeeCode = mySqlConnection.QueryFirstOrDefault($"Proc_GetMaxCode", commandType: CommandType.StoredProcedure);
-                    // trả về mã code
-                    return employeeCode.EmployeeCode;
-                }
 
-            }
-            catch (HttpResponseException ex)
-            {
-                throw new HttpResponseException(ex.Value);
-            }
-        }
 
         public object Import(List<Employee> employees)
         {

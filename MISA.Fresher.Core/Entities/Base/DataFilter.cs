@@ -10,13 +10,13 @@ namespace MISA.Fresher.Core.Entities
     /// data filter
     /// createdBy NHHAi 19/1/2022
     /// </summary>
-    public class DataFilter
+    public class DataFilter<T>
     {
         // tổng số trang
         public int TotalPage{ get; set; }
         // tổng số bản ghi
         public int TotalRecord { get; set; }
         // data
-        public IEnumerable<Employee> data{ get; set; }
+        public IEnumerable<T> data{ get; set; }
     }
 }

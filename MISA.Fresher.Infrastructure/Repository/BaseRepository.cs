@@ -11,6 +11,7 @@ using MISA.Fresher.Core.Entities;
 using MISA.Fresher.Core.MISAAttribute;
 using System.Data;
 using MISA.Fresher.Core.Exceptions;
+using MISA.Fresher.Core.Entities.Base;
 
 namespace MISA.Fresher.Infrastructure.Repository
 {
@@ -25,6 +26,8 @@ namespace MISA.Fresher.Infrastructure.Repository
         // Lấy thông tin database
         protected string _connectionString = string.Empty;
         protected string _className = typeof(T).Name;
+        public IDbConnection dbConnection;
+
         public BaseRepository(IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString("connectDB");
@@ -217,7 +220,7 @@ namespace MISA.Fresher.Infrastructure.Repository
                     DynamicParameters paramCheck = new DynamicParameters();
                     paramCheck.Add($"@{_className}Code", entityCode);
                     // thực hiện kiểm tra trùng mã
-                    var customerCodeDuplicate = sqlConnection.QueryFirstOrDefault<int>($"Proc_CheckDuplicateCode", paramCheck, commandType: CommandType.StoredProcedure);
+                    var customerCodeDuplicate = sqlConnection.QueryFirstOrDefault<int>($"Proc_CheckDuplicate{_className}Code", paramCheck, commandType: CommandType.StoredProcedure);
                     // trả về kết quả
                     return customerCodeDuplicate;
 
@@ -250,7 +253,124 @@ namespace MISA.Fresher.Infrastructure.Repository
                 throw new HttpResponseException(ex.Value);
             }
         }
+        public DataFilter<T> FilterRepository(PaginationRequest paginationRequest)
+        {
+            try
+            {
+                using (MySqlConnection mySqlConnector = new MySqlConnection(_connectionString))
+                {
+                    // khai báo result và gán giá trị
+                    DataFilter<T> result = new DataFilter<T>();
+                    result.TotalPage = 0;
+                    result.TotalRecord = 0;
+                    result.data = null;
+                    DynamicParameters parameter = new DynamicParameters();
+                    parameter.Add($"{_className}Filter", paginationRequest.FilterText, DbType.String);
+                    // tính tổng số bản ghi
+                    int totalPage = 0;
+                    int totalRecord = mySqlConnector.QueryFirstOrDefault<int>($"Proc_TotalRecord{_className}", param: parameter, commandType: CommandType.StoredProcedure);
+                    if (totalRecord > 0)
+                    {
+                        var offset = (paginationRequest.PageNumber - 1) * paginationRequest.PageSize;
+                        // lấy data từ trang thứ first page 
+                        parameter.Add("@firstPage", offset, DbType.Int32);
+                        parameter.Add("@pageSize", paginationRequest.PageSize, DbType.Int32);
+                        // thực hiện lấy dữ liệu
+                        var filterText = mySqlConnector.Query<T>($"Proc_Get{_className}Paging", param: parameter, commandType: CommandType.StoredProcedure);
+                        //Phân trang
+                        if (totalRecord % paginationRequest.PageSize > 0)
+                        {
+                            totalPage = (totalRecord / paginationRequest.PageSize) + 1;
+                        }
+                        else
+                        {
+                            totalPage = (totalRecord / paginationRequest.PageSize);
+                        }
+                        // gán giá trị cho result
+                        result.TotalPage = totalPage;
+                        result.TotalRecord = totalRecord;
+                        result.data = filterText;
+                    }
+                    // trả về kết quả
+                    return result;
+                }
+
+            }
+            catch (HttpResponseException ex)
+            {
+                throw new HttpResponseException(ex.Value);
+            }
+
+        }
+        public int DeleteAllRepository(List<string> entityIds)
+        {
+            try
+            {
+                using (MySqlConnection mySqlConnector = new MySqlConnection(_connectionString))
+                {
+                    mySqlConnector.Open();
+                    // transaction
+                    var transaction = mySqlConnector.BeginTransaction();
+                    try
+                    {
+                        DynamicParameters parameters = new DynamicParameters();
+                        // điền dấu '' cho mỗi phần tử id
+                        //var ids = string.Join(",", employeeIds.Select(item => "'" + item + "'"));
+                        //// add param
+                        //parameters.Add("ids", ids);
+                        //// thực hiện xóa
+                        //var res = mySqlConnector.Execute($"Proc_DeleteEmployeeChecked", param: parameters, transaction, commandType: CommandType.StoredProcedure);
+                        var count = 1;
+                        var ids = "";
+                        foreach (var id in entityIds)
+                        {
+                            //add pẩm
+                            parameters.Add($"@{count}", id);
+                            ids += $"@{count},";
+                            count++;
+                        }
+                        //xóa dấu "," ở cuối chuỗi
+                        ids = ids.Substring(0, ids.Length - 1);
+                        // thực hiện xóa 
+                        var res = mySqlConnector.Execute($"DELETE FROM {_className} WHERE {_className}ID IN ({ids}) ", param: parameters, transaction);
+                        //commit
+                        transaction.Commit();
+                        return res;
+                    }
+                    catch (HttpResponseException ex)
+                    {
+                        transaction.Rollback();
+                        throw new HttpResponseException(ex.Value);
+                    }
+                }
+            }
+            catch (HttpResponseException ex)
+            {
+                throw new HttpResponseException(ex.Value);
+            }
+        }
+
+        public string GetMaxCodeRepository()
+        {
+            try
+            {
+                using (MySqlConnection mySqlConnection = new MySqlConnection(_connectionString))
+                {
+                    // Lấy mã code lớn nhất trong hệ thống
+                    var code = mySqlConnection.QueryFirst<string>($"Proc_GetMaxCode{_className}", commandType: CommandType.StoredProcedure);
+                    // trả về mã code
+                    return code;
+                }
+
+            }
+            catch (HttpResponseException ex)
+            {
+                throw new HttpResponseException(ex.Value);
+            }
+        }
     }
+
+    
     #endregion
 
 }

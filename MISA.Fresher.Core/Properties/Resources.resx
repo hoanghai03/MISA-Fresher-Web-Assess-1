@@ -117,14 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Alert" xml:space="preserve">
+    <value>Chỉ cảnh báo</value>
+  </data>
   <data name="checkDuplicate" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Dư có</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Khách hàng</value>
   </data>
   <data name="DateMessage" xml:space="preserve">
     <value>{0} không được lớn hơn ngày hiện tại!</value>
   </data>
+  <data name="Debt" xml:space="preserve">
+    <value>Dư nợ</value>
+  </data>
   <data name="DuplicateCode" xml:space="preserve">
     <value>{0} đã bị trùng</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Nhân viên</value>
   </data>
   <data name="Enum_Gender_Female" xml:space="preserve">
     <value>Nữ</value>
@@ -135,14 +150,47 @@
   <data name="Enum_Gender_Other" xml:space="preserve">
     <value>Khác</value>
   </data>
+  <data name="Enum_Prefix_Brother" xml:space="preserve">
+    <value>Anh</value>
+  </data>
+  <data name="Enum_Prefix_Grandfather" xml:space="preserve">
+    <value>Ông</value>
+  </data>
+  <data name="Enum_Prefix_Grandma" xml:space="preserve">
+    <value>Bà</value>
+  </data>
+  <data name="Enum_Prefix_Mr" xml:space="preserve">
+    <value>Mr</value>
+  </data>
+  <data name="Enum_Prefix_Mrs" xml:space="preserve">
+    <value>Mrs</value>
+  </data>
+  <data name="Enum_Prefix_Ms" xml:space="preserve">
+    <value>Ms</value>
+  </data>
+  <data name="Enum_Prefix_Sister" xml:space="preserve">
+    <value>Chị</value>
+  </data>
+  <data name="Enum_Prefix_Uncle" xml:space="preserve">
+    <value>Chú</value>
+  </data>
+  <data name="Enum_Prefix_You" xml:space="preserve">
+    <value>Bạn</value>
+  </data>
   <data name="Exception" xml:space="preserve">
     <value>Có lỗi xảy ra vui lòng liên hệ MISA</value>
   </data>
   <data name="FormatCode" xml:space="preserve">
     <value>{0} không đúng định dạng!</value>
   </data>
+  <data name="Hermaphrodite" xml:space="preserve">
+    <value>Lưỡng tính</value>
+  </data>
   <data name="ListEmployee" xml:space="preserve">
     <value>Danh Sách Nhân viên</value>
+  </data>
+  <data name="NoBalance" xml:space="preserve">
+    <value>Không có số dư</value>
   </data>
   <data name="NullId" xml:space="preserve">
     <value>Không có id</value>
@@ -150,8 +198,14 @@
   <data name="NullValue" xml:space="preserve">
     <value>{0} không được phép trống!</value>
   </data>
+  <data name="Obligate" xml:space="preserve">
+    <value>Bắt buộc nhập</value>
+  </data>
   <data name="ParameterFilter" xml:space="preserve">
     <value>Parametter không được bé hơn hoặc bằng 0</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>Nhà cung cấp</value>
   </data>
   <data name="ValidateId" xml:space="preserve">
     <value>Mã ID không đúng định dạng</value>

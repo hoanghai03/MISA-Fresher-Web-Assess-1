@@ -61,11 +61,38 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chỉ cảnh báo.
+        /// </summary>
+        internal static string Alert {
+            get {
+                return ResourceManager.GetString("Alert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
         internal static string checkDuplicate {
             get {
                 return ResourceManager.GetString("checkDuplicate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dư có.
+        /// </summary>
+        internal static string Credit {
+            get {
+                return ResourceManager.GetString("Credit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Khách hàng.
+        /// </summary>
+        internal static string Customer {
+            get {
+                return ResourceManager.GetString("Customer", resourceCulture);
             }
         }
         
@@ -79,11 +106,29 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dư nợ.
+        /// </summary>
+        internal static string Debt {
+            get {
+                return ResourceManager.GetString("Debt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} đã bị trùng.
         /// </summary>
         internal static string DuplicateCode {
             get {
                 return ResourceManager.GetString("DuplicateCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nhân viên.
+        /// </summary>
+        internal static string Employee {
+            get {
+                return ResourceManager.GetString("Employee", resourceCulture);
             }
         }
         
@@ -115,6 +160,87 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Anh.
+        /// </summary>
+        internal static string Enum_Prefix_Brother {
+            get {
+                return ResourceManager.GetString("Enum_Prefix_Brother", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ông.
+        /// </summary>
+        internal static string Enum_Prefix_Grandfather {
+            get {
+                return ResourceManager.GetString("Enum_Prefix_Grandfather", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bà.
+        /// </summary>
+        internal static string Enum_Prefix_Grandma {
+            get {
+                return ResourceManager.GetString("Enum_Prefix_Grandma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mr.
+        /// </summary>
+        internal static string Enum_Prefix_Mr {
+            get {
+                return ResourceManager.GetString("Enum_Prefix_Mr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mrs.
+        /// </summary>
+        internal static string Enum_Prefix_Mrs {
+            get {
+                return ResourceManager.GetString("Enum_Prefix_Mrs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ms.
+        /// </summary>
+        internal static string Enum_Prefix_Ms {
+            get {
+                return ResourceManager.GetString("Enum_Prefix_Ms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chị.
+        /// </summary>
+        internal static string Enum_Prefix_Sister {
+            get {
+                return ResourceManager.GetString("Enum_Prefix_Sister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chú.
+        /// </summary>
+        internal static string Enum_Prefix_Uncle {
+            get {
+                return ResourceManager.GetString("Enum_Prefix_Uncle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bạn.
+        /// </summary>
+        internal static string Enum_Prefix_You {
+            get {
+                return ResourceManager.GetString("Enum_Prefix_You", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Có lỗi xảy ra vui lòng liên hệ MISA.
         /// </summary>
         internal static string Exception {
@@ -133,11 +259,29 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lưỡng tính.
+        /// </summary>
+        internal static string Hermaphrodite {
+            get {
+                return ResourceManager.GetString("Hermaphrodite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Danh Sách Nhân viên.
         /// </summary>
         internal static string ListEmployee {
             get {
                 return ResourceManager.GetString("ListEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Không có số dư.
+        /// </summary>
+        internal static string NoBalance {
+            get {
+                return ResourceManager.GetString("NoBalance", resourceCulture);
             }
         }
         
@@ -160,11 +304,29 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bắt buộc nhập.
+        /// </summary>
+        internal static string Obligate {
+            get {
+                return ResourceManager.GetString("Obligate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Parametter không được bé hơn hoặc bằng 0.
         /// </summary>
         internal static string ParameterFilter {
             get {
                 return ResourceManager.GetString("ParameterFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nhà cung cấp.
+        /// </summary>
+        internal static string Supplier {
+            get {
+                return ResourceManager.GetString("Supplier", resourceCulture);
             }
         }
         
