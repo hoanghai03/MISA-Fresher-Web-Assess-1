@@ -16,5 +16,8 @@ namespace MISA.Fresher.Core.Interfaces.Infrastructure
         /// </summary>
         /// <returns></returns>
         List<Account> GetAccountTree();
+
+        IEnumerable<Account> GetAccountDebitRepository();
+        IEnumerable<Account> GetAccountCreditRepository();
     }
 }

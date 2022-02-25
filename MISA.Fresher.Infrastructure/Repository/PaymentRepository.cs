@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
-using MISA.Fresher.Core.Entities;
+using MISA.Fresher.Core.Entities.Payment;
 using MISA.Fresher.Core.Interfaces.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -9,11 +9,8 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Infrastructure.Repository
 {
-    public class SupplierGroupRepository : BaseRepository<SupplierGroup>,ISupplierGroupRepository
+    public class PaymentRepository : BaseRepository<Payment>,IPaymentRepository
     {
-        public SupplierGroupRepository(IConfiguration configuration) : base(configuration)
-        {
-
-        }
+        public PaymentRepository(IConfiguration configuration) : base(configuration) { }
     }
 }

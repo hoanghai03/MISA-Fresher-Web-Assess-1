@@ -66,5 +66,16 @@ namespace MISA.Fresher.Core.Services
         {
             _accountRepository.GenAccountTree();
         }
+
+        public ServiceResult GetAccountDebit()
+        {
+            return new ServiceResult() { Data = _accountRepository.GetAccountDebitRepository() };
+        }
+
+        public ServiceResult GetAccountCredit()
+        {
+            return new ServiceResult() { Data = _accountRepository.GetAccountCreditRepository() };
+
+        }
     }
 }

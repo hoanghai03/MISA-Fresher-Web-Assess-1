@@ -19,5 +19,7 @@ namespace MISA.Fresher.Core.Interfaces.Service
         /// <returns>Trả về mã ncc mới</returns>
         /// createdBy NHHAi 2/1/2022
         public string GetNewSupplierCode();
+
+
     }
 }

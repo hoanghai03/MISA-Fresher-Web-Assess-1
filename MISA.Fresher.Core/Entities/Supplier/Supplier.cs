@@ -25,6 +25,7 @@ namespace MISA.Fresher.Core.Entities
         [NotEmpty]
         [NotDuplicate]
         [ExportExcel]
+        [CheckInsertCode]
         public string SupplierCode { get; set; }
         // Tên nhà cung cấp
         [PropertyName("Tên nhà cung cấp")]
@@ -100,6 +101,15 @@ namespace MISA.Fresher.Core.Entities
                 }
             }
         }
-
+        // Phân loại (false- tổ chức,true-cá nhân )
+        public byte Category { get; set; }
+        // số CMND
+        public string IdentifyNumber { get; set; }
+        // Nơi cấp
+        public string Place { get; set; }
+        // ngày cấp
+        [CheckDate]
+        [PropertyName("Ngày cấp")]
+        public DateTime? IdentifyDate { get; set; }
     }
 }

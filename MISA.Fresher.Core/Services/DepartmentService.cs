@@ -1,5 +1,6 @@
 ﻿using MISA.Fresher.Core.Entities;
 using MISA.Fresher.Core.Interfaces.Infrastructure;
+using MISA.Fresher.Core.Interfaces.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace MISA.Fresher.Core.Services
     /// department service
     /// createdBy NHHAi 1/1/2022
     /// </summary>
-    public class DepartmentService : BaseService<Department>
+    public class DepartmentService : BaseService<Department>,IDepartmentService
     {
         public DepartmentService(IBaseRepository<Department> baseRepository) : base(baseRepository)
         {

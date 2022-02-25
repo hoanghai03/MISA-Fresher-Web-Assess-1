@@ -286,6 +286,15 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Không có dữ liệu trả về.
+        /// </summary>
+        internal static string Null {
+            get {
+                return ResourceManager.GetString("Null", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Không có id.
         /// </summary>
         internal static string NullId {

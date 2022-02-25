@@ -48,5 +48,37 @@ namespace MISA.Fresher.Api.Controllers
             return Ok();
         }
 
+        [HttpGet("GetAccountDebit")]
+        public IActionResult GetAccountDebit()
+        {
+            ServiceResult serviceResult = new ServiceResult();
+            try
+            {
+                serviceResult = _accountService.GetAccountDebit();
+            }
+            catch(Exception ex)
+            {
+                serviceResult.SetError(ex);
+            }
+
+            return Ok(serviceResult);
+        }
+
+        [HttpGet("GetAccountCredit")]
+        public IActionResult GetAccountCredit()
+        {
+            ServiceResult serviceResult = new ServiceResult();
+            try
+            {
+                serviceResult = _accountService.GetAccountCredit();
+            }
+            catch (Exception ex)
+            {
+                serviceResult.SetError(ex);
+            }
+
+            return Ok(serviceResult);
+        }
+
     }
 }

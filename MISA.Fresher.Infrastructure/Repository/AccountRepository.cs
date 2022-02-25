@@ -90,5 +90,37 @@ namespace MISA.Fresher.Infrastructure.Repository
 
             return 0;
         }
+
+        public IEnumerable<Account> GetAccountDebitRepository()
+        {
+            using(MySqlConnection mySqlConnection = new MySqlConnection(_connectionString))
+            {
+                try
+                {
+                    var response = mySqlConnection.Query<Account>("Proc_GetAccountDebit", commandType: System.Data.CommandType.StoredProcedure);
+                   return response;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
+        public IEnumerable<Account> GetAccountCreditRepository()
+        {
+            using (MySqlConnection mySqlConnection = new MySqlConnection(_connectionString))
+            {
+                try
+                {
+                    var response = mySqlConnection.Query<Account>("Proc_GetAccountCredit", commandType: System.Data.CommandType.StoredProcedure);
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
     }
 }

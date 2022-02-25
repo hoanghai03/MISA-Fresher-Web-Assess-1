@@ -192,6 +192,9 @@
   <data name="NoBalance" xml:space="preserve">
     <value>Không có số dư</value>
   </data>
+  <data name="Null" xml:space="preserve">
+    <value>Không có dữ liệu trả về</value>
+  </data>
   <data name="NullId" xml:space="preserve">
     <value>Không có id</value>
   </data>

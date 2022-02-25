@@ -10,14 +10,22 @@ namespace MISA.Fresher.Core.Entities.Account
     public class Account : BaseEntity
     {
         // khóa chính
+        [Id]
         public Guid AccountId { get; set; }
         // số tài khoản
+        [NotEmpty]
+        [NotDuplicate]
+        [PropertyName("Số tài khoản")]
         public string AccountNumber { get; set; }
         // tên tài khoản
+        [NotEmpty]
+        [PropertyName("Tên tài khoản")]
         public string AccountName { get; set; }
         // tên tiếng anh
         public string AccountNameEnglish { get; set; }
         // Tính chất (1-Dư nợ, 2-Dư có ,3- Lưỡng tính,4- không có số dư)
+        [NotEmpty]
+        [PropertyName("Tính chất")]
         public int? AccountCategoryKind { get; set; }
         [Ignore]
         public string AccountCategorykindName

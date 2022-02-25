@@ -208,7 +208,7 @@ namespace MISA.Fresher.Core.Services
                 // Th nhập mã code sai định dạng
                 if (propCheckCode.Length > 0 && propertyValue != null)
                 {
-                    Regex regex = new Regex(@"^NV-[0-9]+$");
+                    Regex regex = new Regex(@"^NCC[0-9]+$");
                     if (!regex.IsMatch(propertyValue.ToString()))
                     {
                         //errorMsgs.Add(string.Format(Properties.Resources.FormatCode, propertyDisplay));
@@ -221,7 +221,7 @@ namespace MISA.Fresher.Core.Services
             return result;
         }
 
-        protected virtual bool ValidateCustom(T entity)
+        public virtual bool ValidateCustom(T entity)
         {
             return true;
         }

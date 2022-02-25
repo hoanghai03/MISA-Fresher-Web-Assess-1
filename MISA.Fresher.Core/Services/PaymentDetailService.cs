@@ -1,4 +1,4 @@
-﻿using MISA.Fresher.Core.Entities;
+﻿using MISA.Fresher.Core.Entities.PaymentDetail;
 using MISA.Fresher.Core.Interfaces.Infrastructure;
 using MISA.Fresher.Core.Interfaces.Service;
 using System;
@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Core.Services
 {
-    public class SupplierGroupService:BaseService<SupplierGroup>,ISupplierGroupService
+    public class PaymentDetailService : BaseService<PaymentDetail> , IPaymentDetailService
     {
-        public SupplierGroupService(IBaseRepository<SupplierGroup> baseRepository) : base(baseRepository)
+        public PaymentDetailService(IBaseRepository<PaymentDetail> baseRepository ) : base(baseRepository)
         {
 
         }

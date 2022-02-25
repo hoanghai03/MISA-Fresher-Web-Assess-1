@@ -56,6 +56,13 @@ namespace MISA.Fresher.Api
             services.AddScoped<IAccountRepository, AccountRepository>();
             services.AddScoped<IAccountService, AccountService>();
 
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
+            services.AddScoped<IPaymentService, PaymentService>();
+
+            services.AddScoped<IPaymentDetailRepository, PaymentDetailRepository>();
+            services.AddScoped<IPaymentDetailService, PaymentDetailService>();
+
+
 
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
