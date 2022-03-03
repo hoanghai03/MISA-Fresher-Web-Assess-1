@@ -50,9 +50,14 @@ namespace MISA.Fresher.Infrastructure.Repository
                     parameters.Add($"@m_{_className}Id", entityId);
                     // thưc thi câu lệnh sql xóa dữ liệu
                     var rowEffects = mySqlConnection.Execute($"Proc_Del{_className}", param: parameters, transaction, commandType: CommandType.StoredProcedure);
-                    // commit
-                    transaction.Commit();
-                    return rowEffects;
+                    if(rowEffects > 0)
+                    {
+                        // commit
+                        transaction.Commit();
+                    }
+                        return rowEffects;
+                    
+                    
                 }
                 catch (HttpResponseException ex)
                 {
@@ -140,10 +145,15 @@ namespace MISA.Fresher.Infrastructure.Repository
                         }
                         // thực hiện thêm dữ liệu vào csdl
                         var rowEffects = mySqlConnector.Execute($"Proc_Insert{_className}", param: parameters, transaction, commandType: CommandType.StoredProcedure);
-                        //commit
-                        transaction.Commit();
-                        // trả về kết quả khi thêm mơi thành công
-                        return rowEffects;
+                        if (rowEffects > 0)
+                        {
+                            //commit
+                            transaction.Commit();
+                        }
+                            // trả về kết quả khi thêm mơi thành công
+                            return rowEffects;
+                        
+                        
                     }
                     catch (Exception)
                     {
@@ -192,10 +202,14 @@ namespace MISA.Fresher.Infrastructure.Repository
 
                         // thực hiện thêm dữ liệu vào csdl
                         var rowEffects = mySqlConnector.Execute($"Proc_Update{_className}", param: parameters, transaction, commandType: CommandType.StoredProcedure);
-                        //commit
-                        transaction.Commit();
-                        // trả về kết quả khi thêm mơi thành công
-                        return rowEffects;
+
+                        if (rowEffects > 0)
+                        {
+                            //commit
+                            transaction.Commit();
+                        }
+                            // trả về kết quả khi thêm mơi thành công
+                            return rowEffects;
                     }
                     catch (HttpResponseException ex)
                     {
@@ -333,9 +347,14 @@ namespace MISA.Fresher.Infrastructure.Repository
                         ids = ids.Substring(0, ids.Length - 1);
                         // thực hiện xóa 
                         var res = mySqlConnector.Execute($"DELETE FROM {_className} WHERE {_className}ID IN ({ids}) ", param: parameters, transaction);
-                        //commit
-                        transaction.Commit();
-                        return res;
+
+                        if (res == count - 1)
+                        {
+                            //commit
+                            transaction.Commit();
+                        }
+                            // trả về kết quả khi thêm mơi thành công
+                            return res;
                     }
                     catch (HttpResponseException ex)
                     {

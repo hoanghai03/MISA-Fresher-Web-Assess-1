@@ -1,5 +1,6 @@
 ﻿using MISA.Fresher.Core.Entities.Base;
 using MISA.Fresher.Core.Entities.Payment;
+using MISA.Fresher.Core.Entities.PaymentDetail;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,26 @@ namespace MISA.Fresher.Core.Interfaces.Service
         /// </summary>
         /// createdBy NHHAI 23/2/2022
         /// <returns>string</returns>
-        public ServiceResult getNewPaymentNumber();
+        public ServiceResult GetNewPaymentNumber();  
+        
+        
+        /// <summary>
+        /// Hàm insert master detail
+        /// </summary>
+        /// createdBy NHHAI 23/2/2022
+        /// <returns>string</returns>
+        public ServiceResult InsertMasterDetail(Payment payment,IEnumerable<PaymentDetail> paymentDetails);
+        
+        
+        /// <summary>
+        /// Hàm get master detail
+        /// </summary>
+        /// createdBy NHHAI 23/2/2022
+        /// <returns>string</returns>
+        public ServiceResult GetMasterDetail(Guid paymentId);
+
+        
+
+
     }
 }

@@ -9,5 +9,6 @@ namespace MISA.Fresher.Core.Interfaces.Infrastructure
 {
     public interface IPaymentDetailRepository : IBaseRepository<PaymentDetail>
     {
+        public IEnumerable<PaymentDetail> GetWithPaymentId(Guid paymentId);
     }
 }

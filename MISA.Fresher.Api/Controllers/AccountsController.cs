@@ -80,5 +80,22 @@ namespace MISA.Fresher.Api.Controllers
             return Ok(serviceResult);
         }
 
+
+        [HttpGet("AccountId/{accountId}")]
+        public IActionResult DeleteAccountId(Guid accountId)
+        {
+            ServiceResult serviceResult = new ServiceResult();
+            try
+            {
+                serviceResult = _accountService.GetAccountWithChild(accountId);
+            }
+            catch (Exception ex)
+            {
+                serviceResult.SetError(ex);
+            }
+
+            return Ok(serviceResult);
+        }
+
     }
 }

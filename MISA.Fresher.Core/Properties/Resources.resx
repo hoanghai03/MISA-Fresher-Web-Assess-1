@@ -130,13 +130,16 @@
     <value>Khách hàng</value>
   </data>
   <data name="DateMessage" xml:space="preserve">
-    <value>{0} không được lớn hơn ngày hiện tại!</value>
+    <value> không được lớn hơn ngày hiện tại!</value>
   </data>
   <data name="Debt" xml:space="preserve">
     <value>Dư nợ</value>
   </data>
+  <data name="Delete_Not_Success" xml:space="preserve">
+    <value>Xóa không thành công. Không thể xóa danh mục cha nếu chưa xóa danh mục con.</value>
+  </data>
   <data name="DuplicateCode" xml:space="preserve">
-    <value>{0} đã bị trùng</value>
+    <value> đã bị trùng</value>
   </data>
   <data name="Employee" xml:space="preserve">
     <value>Nhân viên</value>
@@ -181,7 +184,7 @@
     <value>Có lỗi xảy ra vui lòng liên hệ MISA</value>
   </data>
   <data name="FormatCode" xml:space="preserve">
-    <value>{0} không đúng định dạng!</value>
+    <value> không đúng định dạng!</value>
   </data>
   <data name="Hermaphrodite" xml:space="preserve">
     <value>Lưỡng tính</value>
@@ -199,7 +202,7 @@
     <value>Không có id</value>
   </data>
   <data name="NullValue" xml:space="preserve">
-    <value>{0} không được phép trống!</value>
+    <value> không được phép trống!</value>
   </data>
   <data name="Obligate" xml:space="preserve">
     <value>Bắt buộc nhập</value>

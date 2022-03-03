@@ -122,5 +122,38 @@ namespace MISA.Fresher.Infrastructure.Repository
                 }
             }
         }
+
+        public int CountAccountByParentId(Guid accountId)
+        {
+            using (MySqlConnection mySqlConnection = new MySqlConnection(_connectionString))
+            {
+                try
+                {
+                    DynamicParameters parameter = new DynamicParameters();
+                    parameter.Add("@ParentId", accountId);
+                    int response = mySqlConnection.QueryFirstOrDefault<int>("Proc_CountAccountByParentId",param: parameter, commandType: System.Data.CommandType.StoredProcedure);
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }  
+        public int CountAccounts()
+        {
+            using (MySqlConnection mySqlConnection = new MySqlConnection(_connectionString))
+            {
+                try
+                {
+                    int response = mySqlConnection.QueryFirstOrDefault<int>("Proc_CountAccounts", commandType: System.Data.CommandType.StoredProcedure);
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
     }
 }

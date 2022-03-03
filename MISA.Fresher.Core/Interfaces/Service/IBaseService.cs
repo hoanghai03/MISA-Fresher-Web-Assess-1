@@ -79,5 +79,7 @@ namespace MISA.Fresher.Core.Interfaces.Service
         /// <returns>stream</returns>
         /// createdBy NHHAi 19/1/2022
         public Stream ExportListUsingEPPlus();
+
+        public ValidateResult DoValidate(T entity, Guid? entityId);
     }
 }

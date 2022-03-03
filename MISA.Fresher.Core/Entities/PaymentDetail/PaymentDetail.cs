@@ -13,12 +13,17 @@ namespace MISA.Fresher.Core.Entities.PaymentDetail
         [Id]
         public Guid PaymentDetailId { get; set; }
         // khóa ngoại
+        [PropertyName("Mã paymentId")]
         public Guid PaymentId { get; set; }
         // diễn giải
         public string Description { get; set; }
         // tài khoản nợ
+        [NotEmpty]
+        [PropertyName("Mã DebitAccount")]
         public Guid DebitAccount { get; set; }
         // tài khoản có
+        [NotEmpty]
+        [PropertyName("Mã CreditAccount")]
         public Guid CreditAccount { get; set; }
         // số tiền
         public double? Amount { get; set; }
@@ -29,10 +34,8 @@ namespace MISA.Fresher.Core.Entities.PaymentDetail
         // Mã nhà cung cấp
         public Guid? SupplierId { get; set; }
         // mã tài khoản nợ
-        [Ignore]
         public string DebitAccountNumber{ get; set; }
         // mã tài khoản có
-        [Ignore]
         public string CreditAccountNumber { get; set; }
     }
 }

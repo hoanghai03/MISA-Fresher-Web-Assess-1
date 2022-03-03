@@ -26,20 +26,27 @@ namespace MISA.Fresher.Core.Interfaces.Service
         /// </summary>
         /// <returns>Trả về ServiceResult</returns>
         /// createdBy NHHAI 23/2/2022
-        ServiceResult GetAccountTree();
+        public ServiceResult GetAccountTree();
 
         /// <summary>
         /// Lấy taif khoản nợ
         /// </summary>
         /// <returns>Trả về ServiceResult</returns>
         /// createdBy NHHAI 23/2/2022
-        ServiceResult GetAccountDebit();
+        public ServiceResult GetAccountDebit();
 
         /// <summary>
         /// Lấy tài khoản có
         /// </summary>
         /// <returns>Trả về ServiceResult</returns>
         /// createdBy NHHAI 23/2/2022
-        ServiceResult GetAccountCredit();
+        public ServiceResult GetAccountCredit();
+
+        /// <summary>
+        /// Lấy tài khoản theo id
+        /// </summary>
+        /// <returns>Trả về ServiceResult</returns>
+        /// createdBy NHHAI 23/2/2022
+        public ServiceResult GetAccountWithChild(Guid AccountId);
     }                                    
 }

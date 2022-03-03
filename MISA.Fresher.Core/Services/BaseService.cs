@@ -125,7 +125,7 @@ namespace MISA.Fresher.Core.Services
 
         }
 
-        protected ValidateResult DoValidate(T entity, Guid? entityId)
+        public ValidateResult DoValidate(T entity, Guid? entityId)
         {
             ValidateResult result = new ValidateResult();
             List<string> errorMsgs = new List<string>();

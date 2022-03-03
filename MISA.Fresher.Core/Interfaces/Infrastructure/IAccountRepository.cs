@@ -17,7 +17,31 @@ namespace MISA.Fresher.Core.Interfaces.Infrastructure
         /// <returns></returns>
         List<Account> GetAccountTree();
 
+        /// <summary>
+        /// Hàm đếm lấy tài khoản nợ
+        /// </summary>
+        /// <returns></returns>
+        /// createdBy NHHai 2/3/2022
         IEnumerable<Account> GetAccountDebitRepository();
+        /// <summary>
+        /// Hàm đếm số tài khoản có
+        /// </summary>
+        /// <returns></returns>
+        /// createdBy NHHai 2/3/2022
         IEnumerable<Account> GetAccountCreditRepository();
+
+        /// <summary>
+        /// Hàm đếm số lượng bản ghi với parentId
+        /// </summary>
+        /// <returns></returns>
+        /// createdBy NHHai 2/3/2022
+        int CountAccountByParentId(Guid accountId);
+
+        /// <summary>
+        /// Hàm đếm số lượng bản ghi
+        /// </summary>
+        /// <returns></returns>
+        /// createdBy NHHai 2/3/2022
+        public int CountAccounts();
     }
 }

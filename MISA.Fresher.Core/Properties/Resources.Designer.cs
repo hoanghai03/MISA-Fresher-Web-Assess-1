@@ -97,7 +97,7 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} không được lớn hơn ngày hiện tại!.
+        ///   Looks up a localized string similar to  không được lớn hơn ngày hiện tại!.
         /// </summary>
         internal static string DateMessage {
             get {
@@ -115,7 +115,16 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} đã bị trùng.
+        ///   Looks up a localized string similar to Xóa không thành công. Không thể xóa danh mục cha nếu chưa xóa danh mục con..
+        /// </summary>
+        internal static string Delete_Not_Success {
+            get {
+                return ResourceManager.GetString("Delete_Not_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  đã bị trùng.
         /// </summary>
         internal static string DuplicateCode {
             get {
@@ -250,7 +259,7 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} không đúng định dạng!.
+        ///   Looks up a localized string similar to  không đúng định dạng!.
         /// </summary>
         internal static string FormatCode {
             get {
@@ -304,7 +313,7 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} không được phép trống!.
+        ///   Looks up a localized string similar to  không được phép trống!.
         /// </summary>
         internal static string NullValue {
             get {
