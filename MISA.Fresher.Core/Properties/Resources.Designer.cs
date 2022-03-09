@@ -277,11 +277,20 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Danh Sách Nhân viên.
+        ///   Looks up a localized string similar to Chi Khác.
         /// </summary>
-        internal static string ListEmployee {
+        internal static string JounalMemo {
             get {
-                return ResourceManager.GetString("ListEmployee", resourceCulture);
+                return ResourceManager.GetString("JounalMemo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Danh Sách.
+        /// </summary>
+        internal static string List {
+            get {
+                return ResourceManager.GetString("List", resourceCulture);
             }
         }
         
@@ -340,11 +349,56 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        internal static string Status_0 {
+            get {
+                return ResourceManager.GetString("Status_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string Status_1 {
+            get {
+                return ResourceManager.GetString("Status_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ngưng sử dụng.
+        /// </summary>
+        internal static string Status_Name_0 {
+            get {
+                return ResourceManager.GetString("Status_Name_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Đang sử dụng.
+        /// </summary>
+        internal static string Status_Name_1 {
+            get {
+                return ResourceManager.GetString("Status_Name_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nhà cung cấp.
         /// </summary>
         internal static string Supplier {
             get {
                 return ResourceManager.GetString("Supplier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phiếu Chi.
+        /// </summary>
+        internal static string TypeDocument {
+            get {
+                return ResourceManager.GetString("TypeDocument", resourceCulture);
             }
         }
         

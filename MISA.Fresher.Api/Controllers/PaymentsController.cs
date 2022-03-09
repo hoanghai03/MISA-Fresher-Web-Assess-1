@@ -11,6 +11,10 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Api.Controllers
 {
+    /// <summary>
+    /// PaymentsController
+    /// createdBy NHHAi 20/2/2022
+    /// </summary>
     public class PaymentsController : BaseController<Payment>
     {
         IPaymentService _paymentService;
@@ -19,12 +23,18 @@ namespace MISA.Fresher.Api.Controllers
             _paymentService = paymentService;
         }
 
+        /// <summary>
+        /// Hàm lấy mã payment mới 
+        /// </summary>
+        /// <returns></returns>
+        /// createdBy NHHai 20/2/2022
         [HttpGet("NewPaymentNumber")]
         public IActionResult GetNewPaymentNumber()
         {
             ServiceResult serviceResult = new ServiceResult();
             try
             {
+                // gọi đến service
                 serviceResult =  _paymentService.GetNewPaymentNumber();
             }
             catch (Exception ex)
@@ -36,12 +46,19 @@ namespace MISA.Fresher.Api.Controllers
 
         }
 
+        /// <summary>
+        /// Hàm insert master detail 
+        /// </summary>
+        /// <returns></returns>
+        /// createdBy NHHai 20/2/2022
         [HttpPost("MasterDetail")]
         public IActionResult InsertMasterDetail(MasterDetail<Payment,PaymentDetail> obj)
         {
             ServiceResult serviceResult = new ServiceResult();
             try
             {
+                // gọi đến service
+
                 serviceResult = _paymentService.InsertMasterDetail(obj.Entity, obj.EntityDetails);
             }
             catch (Exception ex)
@@ -53,12 +70,19 @@ namespace MISA.Fresher.Api.Controllers
 
         }
 
+        /// <summary>
+        /// Hàm lấy master detail theo id
+        /// </summary>
+        /// <returns></returns>
+        /// createdBy NHHai 20/2/2022
         [HttpGet("MasterDetail/{paymentId}")]
         public IActionResult GetMasterDetail(Guid paymentId)
         {
             ServiceResult serviceResult = new ServiceResult();
             try
             {
+                // gọi đến service
+
                 serviceResult = _paymentService.GetMasterDetail(paymentId);
             }
             catch (Exception ex)

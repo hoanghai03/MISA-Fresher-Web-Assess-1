@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Core.Services
 {
+    /// <summary>
+    /// SupplierGroupService
+    /// createdBy NHHAi 20/2/2022
+    /// </summary>
     public class SupplierGroupService:BaseService<SupplierGroup>,ISupplierGroupService
     {
         public SupplierGroupService(IBaseRepository<SupplierGroup> baseRepository) : base(baseRepository)

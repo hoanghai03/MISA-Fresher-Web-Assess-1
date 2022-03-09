@@ -50,14 +50,14 @@ namespace MISA.Fresher.Infrastructure.Repository
                     parameters.Add($"@m_{_className}Id", entityId);
                     // thưc thi câu lệnh sql xóa dữ liệu
                     var rowEffects = mySqlConnection.Execute($"Proc_Del{_className}", param: parameters, transaction, commandType: CommandType.StoredProcedure);
-                    if(rowEffects > 0)
+                    if (rowEffects > 0)
                     {
                         // commit
                         transaction.Commit();
                     }
-                        return rowEffects;
-                    
-                    
+                    return rowEffects;
+
+
                 }
                 catch (HttpResponseException ex)
                 {
@@ -150,14 +150,18 @@ namespace MISA.Fresher.Infrastructure.Repository
                             //commit
                             transaction.Commit();
                         }
-                            // trả về kết quả khi thêm mơi thành công
-                            return rowEffects;
-                        
-                        
+                        else
+                        {
+                            transaction.Rollback();
+                        }
+                        // trả về kết quả khi thêm mơi thành công
+                        return rowEffects;
+
+
                     }
                     catch (Exception)
                     {
-                        transaction.Rollback();
+                        
                         throw;
                     }
                 }
@@ -208,8 +212,8 @@ namespace MISA.Fresher.Infrastructure.Repository
                             //commit
                             transaction.Commit();
                         }
-                            // trả về kết quả khi thêm mơi thành công
-                            return rowEffects;
+                        // trả về kết quả khi thêm mơi thành công
+                        return rowEffects;
                     }
                     catch (HttpResponseException ex)
                     {
@@ -353,12 +357,12 @@ namespace MISA.Fresher.Infrastructure.Repository
                             //commit
                             transaction.Commit();
                         }
-                            // trả về kết quả khi thêm mơi thành công
-                            return res;
+                        else transaction.Rollback();
+                        // trả về kết quả khi thêm mơi thành công
+                        return res;
                     }
                     catch (HttpResponseException ex)
                     {
-                        transaction.Rollback();
                         throw new HttpResponseException(ex.Value);
                     }
                 }
@@ -389,7 +393,7 @@ namespace MISA.Fresher.Infrastructure.Repository
         }
     }
 
-    
+
     #endregion
 
 }

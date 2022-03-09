@@ -12,6 +12,10 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Infrastructure.Repository
 {
+    /// <summary>
+    /// PaymentDetailRepository
+    /// createdBy NHHAi 26/2/2022
+    /// </summary>
     public class PaymentDetailRepository : BaseRepository<PaymentDetail>,IPaymentDetailRepository
     {
         public PaymentDetailRepository(IConfiguration configuration) : base(configuration)

@@ -285,7 +285,7 @@ namespace MISA.Fresher.Core.Services
                     workSheet.TabColor = System.Drawing.Color.Black;
                     workSheet.DefaultRowHeight = (int)Enum.Excel.DefaultRowHeight;
                     // title danh sách nhân viên
-                    workSheet.Cells["E2"].Value = Properties.Resources.ListEmployee;
+                    workSheet.Cells["E2"].Value = Properties.Resources.List;
                     workSheet.Cells["E2"].Style.Font.Name = "B Zar";
                     workSheet.Cells["E2"].Style.Font.Size = (int)Enum.Excel.Font_Size;
                     workSheet.Cells["E2"].Style.Font.Bold = true;

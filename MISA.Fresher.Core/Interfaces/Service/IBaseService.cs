@@ -80,6 +80,7 @@ namespace MISA.Fresher.Core.Interfaces.Service
         /// createdBy NHHAi 19/1/2022
         public Stream ExportListUsingEPPlus();
 
+        // Hàm validate
         public ValidateResult DoValidate(T entity, Guid? entityId);
     }
 }

@@ -243,6 +243,23 @@ namespace MISA.Fresher.Core.Entities.Account
 
         public Guid? ParentId { get; set; }
 
+        // trạng thái (1- đang sử dụng,2-ngưng sử dụng)
+        public byte? Status { get; set; }
+        [Ignore]
+        public string StatusName {
+            get
+            {
+                switch (Status)
+                {
+                    case (int) Enum.Status.Status_1:
+                        return Properties.Resources.Status_Name_1;
+                    case (int) Enum.Status.Status_0:
+                        return Properties.Resources.Status_Name_0;
+                    default:
+                        return null;
+                }
+            }
+        }
 
         /// <summary>
         /// 

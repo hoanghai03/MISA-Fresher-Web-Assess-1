@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Core.Services
 {
+    /// <summary>
+    /// SupplierService
+    /// createdBy NHHai 20/2/2022
+    /// </summary>
     public class SupplierService : BaseService<Supplier>,ISupplierService
     {
         IBaseRepository<Supplier> _base;

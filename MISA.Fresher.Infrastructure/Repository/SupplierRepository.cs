@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Infrastructure.Repository
 {
+    /// <summary>
+    /// SupplierRepository
+    /// createdBy NHHai 25/2/2022
+    /// </summary>
     public class SupplierRepository:BaseRepository<Supplier>,ISupplierRepository
     {
         public SupplierRepository(IConfiguration configuration) : base(configuration)

@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Api.Controllers
 {
+    /// <summary>
+    /// PaymentDetaisController
+    /// createdBy NHHAI 20/2/2022
+    /// </summary>
     public class PaymentDetailsController : BaseController<PaymentDetail>
     {
         public PaymentDetailsController(IBaseService<PaymentDetail> baseService) : base(baseService)

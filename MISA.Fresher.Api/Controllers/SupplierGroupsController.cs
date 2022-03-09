@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Api.Controllers
 {
+    /// <summary>
+    /// SupplierGroupController
+    /// createdBy NHHai 20/2/2022
+    /// </summary>
     public class SupplierGroupsController : BaseController<SupplierGroup>
     {
         public SupplierGroupsController(IBaseService<SupplierGroup> baseService) : base(baseService)

@@ -189,8 +189,11 @@
   <data name="Hermaphrodite" xml:space="preserve">
     <value>Lưỡng tính</value>
   </data>
-  <data name="ListEmployee" xml:space="preserve">
-    <value>Danh Sách Nhân viên</value>
+  <data name="JounalMemo" xml:space="preserve">
+    <value>Chi Khác</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>Danh Sách</value>
   </data>
   <data name="NoBalance" xml:space="preserve">
     <value>Không có số dư</value>
@@ -210,8 +213,23 @@
   <data name="ParameterFilter" xml:space="preserve">
     <value>Parametter không được bé hơn hoặc bằng 0</value>
   </data>
+  <data name="Status_0" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Status_1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Status_Name_0" xml:space="preserve">
+    <value>Ngưng sử dụng</value>
+  </data>
+  <data name="Status_Name_1" xml:space="preserve">
+    <value>Đang sử dụng</value>
+  </data>
   <data name="Supplier" xml:space="preserve">
     <value>Nhà cung cấp</value>
+  </data>
+  <data name="TypeDocument" xml:space="preserve">
+    <value>Phiếu Chi</value>
   </data>
   <data name="ValidateId" xml:space="preserve">
     <value>Mã ID không đúng định dạng</value>

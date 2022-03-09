@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Core.Entities.Base
 {
+    /// <summary>
+    /// EntityTree
+    /// createdBy NHHAi 25/2/2022
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class EntityTree<T>
     {
         // danh sách entity

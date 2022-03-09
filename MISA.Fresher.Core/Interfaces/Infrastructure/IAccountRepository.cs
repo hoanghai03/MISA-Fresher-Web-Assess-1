@@ -12,9 +12,10 @@ namespace MISA.Fresher.Core.Interfaces.Infrastructure
         int GenAccountTree();
 
         /// <summary>
-        /// 
+        /// Lấy tài khoản theo dạng cây
         /// </summary>
         /// <returns></returns>
+        /// createdBy NHHAi 20/2/2022
         List<Account> GetAccountTree();
 
         /// <summary>

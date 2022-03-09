@@ -20,7 +20,7 @@ namespace MISA.Fresher.Core.Services
         }
 
         /// <summary>
-        /// 
+        /// Lấy tài khoản theo dạng tree
         /// </summary>
         /// <returns></returns>
         public ServiceResult GetAccountTree()
@@ -40,7 +40,8 @@ namespace MISA.Fresher.Core.Services
             }
             RecursiveAccount(accountsTree, accounts, childIndex);
             // lấy tổng số bản ghi
-            int total = _accountRepository.CountAccounts();
+            //int total = _accountRepository.CountAccounts();
+            int total = accounts.Count();
             // gán danh sách account
             tree.Entitys = accountsTree;
             // gán tổng số bản ghi
@@ -59,6 +60,7 @@ namespace MISA.Fresher.Core.Services
             childIndex++;
             for(int i = 0; i < list.Count; i++)
             {
+                // lặp các phần tử
                 Guid parentId = list[i].AccountId;
                 list[i].Children = source.Where(acount => acount.ParentId == parentId).ToList();
                 for (int j = 0; j < list[i].Children.Count; j++)
@@ -71,6 +73,7 @@ namespace MISA.Fresher.Core.Services
 
         public void GenAccountTree()
         {
+            // gọi đến repository
             _accountRepository.GenAccountTree();
         }
 
@@ -98,7 +101,7 @@ namespace MISA.Fresher.Core.Services
             else
             {
                 // TH: có con
-                serviceResult.Code = 400;
+                serviceResult.Code = (int) MISA.Fresher.Core.Enum.Code.BadRequest;
                 serviceResult.ErrorMessage = Properties.Resources.Delete_Not_Success;
                 serviceResult.Success = false;
             }

@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Core.Interfaces.Infrastructure
 {
-    
+
+    /// <summary>
+    /// ISupplierRepository
+    /// createdBy NHHai 20/2/2022
+    /// </summary>
     public interface ISupplierRepository:IBaseRepository<Supplier>
     {
     }

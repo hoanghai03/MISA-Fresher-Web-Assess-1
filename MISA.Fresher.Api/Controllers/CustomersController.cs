@@ -14,8 +14,7 @@ namespace MISA.Fresher.Api.Controllers
     /// controller khách hàng
     /// createdBy NHHai 31/12/2021
     /// </summary>
-    public class CustomersController
-        : BaseController<Customer>
+    public class CustomersController: BaseController<Customer>
     {
         public CustomersController(IBaseService<Customer> baseService) : base(baseService)
         {

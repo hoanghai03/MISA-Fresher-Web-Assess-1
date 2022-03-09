@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Core.Services
 {
+    /// <summary>
+    /// PaymentDetailService
+    /// createdBy NHHAi 20/2/2022
+    /// </summary>
     public class PaymentDetailService : BaseService<PaymentDetail> , IPaymentDetailService
     {
         public PaymentDetailService(IBaseRepository<PaymentDetail> baseRepository ) : base(baseRepository)

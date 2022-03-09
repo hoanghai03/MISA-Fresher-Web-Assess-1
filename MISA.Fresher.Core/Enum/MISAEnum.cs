@@ -30,7 +30,7 @@ namespace MISA.Fresher.Core.Enum
         Hermaphrodite = 3,
         // không có số dư
         NoBalance = 4
-    }    
+    }
     public enum DetailByObjectKind
     {
         // nhà cung cấp
@@ -94,7 +94,8 @@ namespace MISA.Fresher.Core.Enum
         Uncle = 9,
     }
 
-    public enum Code {
+    public enum Code
+    {
         BadRequest = 400,
         Created = 201,
         ServerError = 500
@@ -106,5 +107,14 @@ namespace MISA.Fresher.Core.Enum
         Alert = 1,
         // bắt buộc
         Obligate = 0
+    }
+
+
+    public enum Status
+    {
+        // Đang sủ dụng
+        Status_1 = 1,
+        // Ngưng sử dụng
+        Status_0 = 0
     }
 }

@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Api.Controllers
 {
+    /// <summary>
+    /// Account Controller
+    /// createdBy NHHai 20/2/2022
+    /// </summary>
     public class AccountsController : BaseController<Account>
     {
         public IAccountService _accountService;
@@ -18,12 +22,18 @@ namespace MISA.Fresher.Api.Controllers
             _accountService = accountService;
         }
 
+        /// <summary>
+        /// Hàm lấy tài khoản theo dạng cây
+        /// </summary>
+        /// <returns>trả về accounts</returns>
+        /// createdBy NHHai 20/2/2022
         [HttpGet("GetAccountTree")]
         public IActionResult GetAccountTree()
         {
             ServiceResult serviceResult = new ServiceResult();
             try
             {
+                // gọi đến service
                 serviceResult = _accountService.GetAccountTree();
             }
             catch (Exception ex)
@@ -34,11 +44,18 @@ namespace MISA.Fresher.Api.Controllers
             return Ok(serviceResult);
         }
 
+
+        /// <summary>
+        /// Hàm sinh dữ liệu tài khoản
+        /// </summary>
+        /// <returns>trả về accounts</returns>
+        /// createdBy NHHai 20/2/2022
         [HttpGet("GenAccountTree")]
         public IActionResult GenAccountTree()
         {
             try
             {
+                // gọi đến service
                 _accountService.GenAccountTree();
             }
             catch (Exception)
@@ -48,12 +65,19 @@ namespace MISA.Fresher.Api.Controllers
             return Ok();
         }
 
+
+        /// <summary>
+        /// Hàm lấy tài khoản nợ
+        /// </summary>
+        /// <returns>trả về accounts</returns>
+        /// createdBy NHHai 20/2/2022
         [HttpGet("GetAccountDebit")]
         public IActionResult GetAccountDebit()
         {
             ServiceResult serviceResult = new ServiceResult();
             try
             {
+                // gọi đến service
                 serviceResult = _accountService.GetAccountDebit();
             }
             catch(Exception ex)
@@ -64,12 +88,19 @@ namespace MISA.Fresher.Api.Controllers
             return Ok(serviceResult);
         }
 
+
+        /// <summary>
+        /// Hàm lấy tài khoản có
+        /// </summary>
+        /// <returns>trả về accounts</returns>
+        /// createdBy NHHai 20/2/2022
         [HttpGet("GetAccountCredit")]
         public IActionResult GetAccountCredit()
         {
             ServiceResult serviceResult = new ServiceResult();
             try
             {
+                // gọi đến service
                 serviceResult = _accountService.GetAccountCredit();
             }
             catch (Exception ex)
@@ -81,12 +112,18 @@ namespace MISA.Fresher.Api.Controllers
         }
 
 
+        /// <summary>
+        /// Hàm lấy tài khoản theo accountId
+        /// </summary>
+        /// <returns>trả về accounts</returns>
+        /// createdBy NHHai 20/2/2022
         [HttpGet("AccountId/{accountId}")]
         public IActionResult DeleteAccountId(Guid accountId)
         {
             ServiceResult serviceResult = new ServiceResult();
             try
             {
+                // gọi đến service
                 serviceResult = _accountService.GetAccountWithChild(accountId);
             }
             catch (Exception ex)

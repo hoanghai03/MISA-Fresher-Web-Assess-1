@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Core.Interfaces.Infrastructure
 {
+    /// <summary>
+    /// IPaymentRepository
+    /// createdBy NHHai 20/2/2022
+    /// </summary>
     public interface IPaymentRepository : IBaseRepository<Payment>
     {
         /// <summary>
