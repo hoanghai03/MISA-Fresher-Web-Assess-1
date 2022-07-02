@@ -295,11 +295,29 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thiếu entityID.
+        /// </summary>
+        internal static string MissingEntityID {
+            get {
+                return ResourceManager.GetString("MissingEntityID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Không có số dư.
         /// </summary>
         internal static string NoBalance {
             get {
                 return ResourceManager.GetString("NoBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bạn không có quyền truy cập.
+        /// </summary>
+        internal static string NotPermission {
+            get {
+                return ResourceManager.GetString("NotPermission", resourceCulture);
             }
         }
         

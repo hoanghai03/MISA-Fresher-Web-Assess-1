@@ -27,7 +27,7 @@ namespace MISA.Fresher.Core.Services
     {
 
         IBaseRepository<Employee> _employee;
-        public EmployeeService(IEmployeeRepository employeeRepository, IEmployeeRepository employee) : base(employeeRepository)
+        public EmployeeService(IEmployeeRepository employeeRepository, IEmployeeRepository employee) : base(employeeRepository,null)
         {
             _employee = employee;
         }

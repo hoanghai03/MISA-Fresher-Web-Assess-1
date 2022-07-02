@@ -14,7 +14,7 @@ namespace MISA.Fresher.Core.Services
     public class AccountService : BaseService<Account>, IAccountService
     {
         public IAccountRepository _accountRepository;
-        public AccountService(IAccountRepository accountRepository) : base(accountRepository)
+        public AccountService(IAccountRepository accountRepository) : base(accountRepository,null)
         {
             _accountRepository = accountRepository;
         }
@@ -103,7 +103,6 @@ namespace MISA.Fresher.Core.Services
                 // TH: có con
                 serviceResult.Code = (int) MISA.Fresher.Core.Enum.Code.BadRequest;
                 serviceResult.ErrorMessage = Properties.Resources.Delete_Not_Success;
-                serviceResult.Success = false;
             }
             return serviceResult;
         }

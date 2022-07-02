@@ -22,7 +22,7 @@ namespace MISA.Fresher.Core.Services
         IPaymentRepository _paymentRepository;
         IPaymentDetailRepository _paymentDetailRepository;
         IPaymentDetailService _paymentDetailService;
-        public PaymentService(IPaymentRepository paymentRepository, IPaymentDetailRepository paymentDetailRepository, IPaymentDetailService paymentDetailService) : base(paymentRepository)
+        public PaymentService(IPaymentRepository paymentRepository, IPaymentDetailRepository paymentDetailRepository, IPaymentDetailService paymentDetailService) : base(paymentRepository,null)
         {
             _paymentRepository = paymentRepository;
             _paymentDetailRepository = paymentDetailRepository;
@@ -66,7 +66,6 @@ namespace MISA.Fresher.Core.Services
             {
                 serviceResult.Code = 500;
                 serviceResult.ErrorMessage = Properties.Resources.Null;
-                serviceResult.Success = false;
             }
             return serviceResult;
         }
@@ -81,7 +80,6 @@ namespace MISA.Fresher.Core.Services
             {
                 // ghi lỗi
                 serviceResult.Code = (int)Enum.Code.BadRequest;
-                serviceResult.Success = false;
                 serviceResult.ValidateInfo = validateResult.ValidateInfo;
             }
             else
@@ -99,7 +97,6 @@ namespace MISA.Fresher.Core.Services
                 {
 
                     serviceResult.Code = (int)Enum.Code.BadRequest;
-                    serviceResult.Success = false;
                     // gán validateinfo
                     serviceResult.ValidateInfo = validateResultDetail.ValidateInfo;
 

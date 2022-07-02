@@ -15,7 +15,7 @@ namespace MISA.Fresher.Core.Services
     /// </summary>
     public class DepartmentService : BaseService<Department>,IDepartmentService
     {
-        public DepartmentService(IBaseRepository<Department> baseRepository) : base(baseRepository)
+        public DepartmentService(IBaseRepository<Department> baseRepository) : base(baseRepository,null)
         {
 
         }

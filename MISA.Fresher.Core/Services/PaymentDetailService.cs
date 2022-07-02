@@ -15,7 +15,7 @@ namespace MISA.Fresher.Core.Services
     /// </summary>
     public class PaymentDetailService : BaseService<PaymentDetail> , IPaymentDetailService
     {
-        public PaymentDetailService(IBaseRepository<PaymentDetail> baseRepository ) : base(baseRepository)
+        public PaymentDetailService(IBaseRepository<PaymentDetail> baseRepository ) : base(baseRepository,null)
         {
 
         }

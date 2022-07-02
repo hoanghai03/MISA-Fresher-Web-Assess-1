@@ -195,8 +195,14 @@
   <data name="List" xml:space="preserve">
     <value>Danh Sách</value>
   </data>
+  <data name="MissingEntityID" xml:space="preserve">
+    <value>Thiếu entityID</value>
+  </data>
   <data name="NoBalance" xml:space="preserve">
     <value>Không có số dư</value>
+  </data>
+  <data name="NotPermission" xml:space="preserve">
+    <value>Bạn không có quyền truy cập</value>
   </data>
   <data name="Null" xml:space="preserve">
     <value>Không có dữ liệu trả về</value>

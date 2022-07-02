@@ -1,4 +1,5 @@
-﻿using MISA.Fresher.Core.Entities;
+﻿using Microsoft.AspNetCore.Http;
+using MISA.Fresher.Core.Entities;
 using MISA.Fresher.Core.Exceptions;
 using MISA.Fresher.Core.Interfaces.Infrastructure;
 using MISA.Fresher.Core.Interfaces.Service;
@@ -17,9 +18,12 @@ namespace MISA.Fresher.Core.Services
     public class SupplierService : BaseService<Supplier>,ISupplierService
     {
         IBaseRepository<Supplier> _base;
-        public SupplierService(ISupplierRepository supplierRepository) : base(supplierRepository)
+        private readonly IHttpContextAccessor accessor;
+
+        public SupplierService(ISupplierRepository supplierRepository,IHttpContextAccessor accessor) : base(supplierRepository, accessor)
         {
             _base = supplierRepository;
+            this.accessor = accessor;
         }
 
         public string GetNewSupplierCode()

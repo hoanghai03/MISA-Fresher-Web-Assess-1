@@ -6,10 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="EPPlus" Version="5.8.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AuthService\AuthService.csproj" />
     <ProjectReference Include="..\MISA.Fresher.Core\MISA.Fresher.Core.csproj" />
     <ProjectReference Include="..\MISA.Fresher.Infrastructure\MISA.Fresher.Infrastructure.csproj" />
   </ItemGroup>

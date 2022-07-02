@@ -94,5 +94,7 @@ namespace MISA.Fresher.Core.Interfaces.Infrastructure
         /// <returns>trả về mã lớn nhất trong db</returns>
         /// createdBy NHHAi 2/1/2022
         public string GetMaxCodeRepository();
+
+        public List<long> GetActionsByUserID(string userID);
     }
 }

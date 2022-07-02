@@ -19,7 +19,19 @@ namespace MISA.Fresher.Core.Entities.Base
         // Thông tin lỗi
         public string ErrorMessage { get; set; }
         // Dữ liệu trả về thành công hay không (true- thành công,false- không thành công) 
-        public bool Success { get; set; } = true;
+        public bool Success { 
+            get {
+                switch (Code)
+                {
+                    case 200:
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        }
+
+  
         // Danh sách lỗi
         public List<ValidateField> ValidateInfo { get; set; }
         // ServiceTime
@@ -29,7 +41,6 @@ namespace MISA.Fresher.Core.Entities.Base
         {
             Code = (int)System.Net.HttpStatusCode.InternalServerError;
             ErrorMessage = ex.Message;
-            Success = false;
         }
     }
 }

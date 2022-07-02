@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MISA.Fresher.Core.Entities.Base;
 using MISA.Fresher.Core.Exceptions;
@@ -14,6 +15,7 @@ namespace MISA.Fresher.Api.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
+    [Authorize]
     public class BaseController<T> : ControllerBase
     {
         IBaseService<T> _baseService;

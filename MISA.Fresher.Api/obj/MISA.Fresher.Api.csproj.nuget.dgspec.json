@@ -4,6 +4,94 @@
     "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Api\\MISA.Fresher.Api.csproj": {}
   },
   "projects": {
+    "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\AuthService\\AuthService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\AuthService\\AuthService.csproj",
+        "projectName": "AuthService",
+        "projectPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\AuthService\\AuthService.csproj",
+        "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\AuthService\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "Microsoft.AspNetCore.Authorization": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.20.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Api\\MISA.Fresher.Api.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -28,6 +116,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\AuthService\\AuthService.csproj": {
+                "projectPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\AuthService\\AuthService.csproj"
+              },
               "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj": {
                 "projectPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj"
               },
@@ -50,6 +141,10 @@
             "EPPlus": {
               "target": "Package",
               "version": "[5.8.4, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -125,6 +220,10 @@
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.2.5, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.20.0, )"
             }
           },
           "imports": [

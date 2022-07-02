@@ -1,4 +1,6 @@
-﻿using MISA.Fresher.Core.Entities;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Net.Http.Headers;
+using MISA.Fresher.Core.Entities;
 using MISA.Fresher.Core.Entities.Base;
 using MISA.Fresher.Core.Exceptions;
 using MISA.Fresher.Core.Interfaces.Infrastructure;
@@ -8,6 +10,7 @@ using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -20,12 +23,24 @@ namespace MISA.Fresher.Core.Services
     public class BaseService<T> : IBaseService<T>
     {
         IBaseRepository<T> _baseRepository;
-        public BaseService(IBaseRepository<T> baseRepository)
+        private readonly IHttpContextAccessor accessor;
+
+        public BaseService(IBaseRepository<T> baseRepository, IHttpContextAccessor accessor)
         {
             _baseRepository = baseRepository;
+            this.accessor = accessor;
         }
         public ServiceResult DeleteService(Guid entityId)
         {
+            // check permission
+            if(!CheckPermission((long)Enum.Actions.Delete))
+            {
+                return new ServiceResult()
+                {
+                    Code = (int)Enum.Code.Forbidden,
+                    ErrorMessage = Properties.Resources.NotPermission
+                };
+            }
             ServiceResult serviceResult = new ServiceResult();
             if (entityId != null)
             {
@@ -34,14 +49,23 @@ namespace MISA.Fresher.Core.Services
             }
             else
             {
-                serviceResult.ErrorMessage = "Thiếu entityId";
-                serviceResult.Success = false;
+                serviceResult.ErrorMessage = Properties.Resources.MissingEntityID;
             }
             return serviceResult;
         }
 
         public ServiceResult GetByIdService(Guid entityId)
         {
+            // check permission
+            if (!CheckPermission((long)Enum.Actions.View))
+            {
+                return new ServiceResult()
+                {
+                    Code = (int)Enum.Code.Forbidden,
+                    ErrorMessage = Properties.Resources.NotPermission
+                };
+            }
+
             ServiceResult serviceResult = new ServiceResult();
             if (entityId != null)
             {
@@ -50,8 +74,7 @@ namespace MISA.Fresher.Core.Services
             }
             else
             {
-                serviceResult.ErrorMessage = "Thiếu entityId";
-                serviceResult.Success = false;
+                serviceResult.ErrorMessage = Properties.Resources.MissingEntityID;
             }
             return serviceResult;
 
@@ -59,13 +82,31 @@ namespace MISA.Fresher.Core.Services
 
         public ServiceResult GetService()
         {
+            // check permission
+            if (!CheckPermission((long)Enum.Actions.View))
+            {
+                return new ServiceResult()
+                {
+                    Code = (int)Enum.Code.Forbidden,
+                    ErrorMessage = Properties.Resources.NotPermission
+                };
+            }
             return new ServiceResult() { Data = _baseRepository.Get() };
 
         }
 
         public ServiceResult InsertService(T entity)
         {
-            // Sửa lại dovalidate
+
+            //check permission
+            if (!this.CheckPermission((long) Enum.Actions.Add))
+            {
+                return new ServiceResult()
+                {
+                    Code = (int) Enum.Code.Forbidden,
+                    ErrorMessage = Properties.Resources.NotPermission,
+                };
+            }
 
             ServiceResult serviceResult = new ServiceResult();
             // validate dữ liệu chung
@@ -74,7 +115,6 @@ namespace MISA.Fresher.Core.Services
             if (!validateResult.IsValid)
             {
                 serviceResult.Code = (int)Enum.Code.BadRequest;
-                serviceResult.Success = false;
                 serviceResult.ValidateInfo = validateResult.ValidateInfo;
             }
             else
@@ -95,6 +135,16 @@ namespace MISA.Fresher.Core.Services
 
         public ServiceResult UpdateService(T entity, Guid entityId)
         {
+            // check permission
+            if (!CheckPermission((long)Enum.Actions.Edit))
+            {
+                return new ServiceResult()
+                {
+                    Code = (int)Enum.Code.Forbidden,
+                    ErrorMessage = Properties.Resources.NotPermission
+                };
+            }
+
             ServiceResult serviceResult = new ServiceResult();
             ValidateResult validateResult = new ValidateResult();
 
@@ -104,7 +154,6 @@ namespace MISA.Fresher.Core.Services
             if (!validateResult.IsValid)
             {
                 serviceResult.Code = (int) Enum.Code.BadRequest;
-                serviceResult.Success = false;
                 serviceResult.ValidateInfo = validateResult.ValidateInfo;
             }
             else
@@ -252,6 +301,16 @@ namespace MISA.Fresher.Core.Services
 
         public ServiceResult DeleteAllService(List<string> entityIds)
         {
+            // check permission
+            if (!CheckPermission((long)Enum.Actions.Delete))
+            {
+                return new ServiceResult()
+                {
+                    Code = (int)Enum.Code.Forbidden,
+                    ErrorMessage = Properties.Resources.NotPermission
+                };
+            }
+
             ServiceResult serviceResult = new ServiceResult();
             if (entityIds.Count > 0)
             {
@@ -261,7 +320,6 @@ namespace MISA.Fresher.Core.Services
                 {
                     // nếu như dữ liệu trống thì sẽ hiện ra thông báo
                     /*throw new HttpResponseException(Properties.Resources.NullId);*/
-                    serviceResult.Success = false;
                     serviceResult.ErrorMessage = Properties.Resources.NullId;
                 }
             }
@@ -368,6 +426,22 @@ namespace MISA.Fresher.Core.Services
 
                 throw new HttpResponseException(ex.Value);
             }
+        }
+        
+        public bool CheckPermission(long permission)
+        {
+            // Check permissionn
+            var bearerToken = accessor.HttpContext.Request.Headers[HeaderNames.Authorization];
+            var token = bearerToken.ToString().Substring(7);
+            // decode token
+            var handler = new JwtSecurityTokenHandler();
+            var jwtSecurityToken = handler.ReadJwtToken(token);
+            // B1: Lấy user id trong token
+            string userID = jwtSecurityToken.Claims.ToList().Find(item => item.Type == "UserId").Value;
+            // B2: Lấy ra role => action của role
+            var listAction = _baseRepository.GetActionsByUserID(userID);
+            // B3: and với permission => nếu == permission thì có quyền, ko thì return 403
+            return (listAction.Sum(item => item) & permission) == permission;
         }
     }
 }

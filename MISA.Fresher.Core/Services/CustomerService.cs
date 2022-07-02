@@ -16,7 +16,7 @@ namespace MISA.Fresher.Core.Services
     /// </summary>
     public class CustomerService : BaseService<Customer>
     {
-        public CustomerService(IBaseRepository<Customer> baseRepository):base(baseRepository)
+        public CustomerService(IBaseRepository<Customer> baseRepository):base(baseRepository,null)
         {
 
         }

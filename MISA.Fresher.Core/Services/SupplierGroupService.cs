@@ -15,7 +15,7 @@ namespace MISA.Fresher.Core.Services
     /// </summary>
     public class SupplierGroupService:BaseService<SupplierGroup>,ISupplierGroupService
     {
-        public SupplierGroupService(IBaseRepository<SupplierGroup> baseRepository) : base(baseRepository)
+        public SupplierGroupService(IBaseRepository<SupplierGroup> baseRepository) : base(baseRepository,null)
         {
 
         }

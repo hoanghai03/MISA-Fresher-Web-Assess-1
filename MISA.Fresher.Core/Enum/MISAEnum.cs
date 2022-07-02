@@ -98,7 +98,8 @@ namespace MISA.Fresher.Core.Enum
     {
         BadRequest = 400,
         Created = 201,
-        ServerError = 500
+        ServerError = 500,
+        Forbidden = 403
     }
 
     public enum Follow
@@ -116,5 +117,17 @@ namespace MISA.Fresher.Core.Enum
         Status_1 = 1,
         // Ngưng sử dụng
         Status_0 = 0
+    }
+
+    public enum Actions
+    {
+        // Quyền xem dữ liệu
+        View = 1,
+        //Quyền thêm dữ liệu
+        Add = 2,
+        // Quyền sửa dữ liệu
+        Edit = 4,
+        //Quyền xóa dữ liệu
+        Delete = 8
     }
 }

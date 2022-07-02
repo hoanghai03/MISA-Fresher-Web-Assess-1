@@ -391,6 +391,17 @@ namespace MISA.Fresher.Infrastructure.Repository
                 throw new HttpResponseException(ex.Value);
             }
         }
+
+        public List<long> GetActionsByUserID(string userID)
+        {
+            using(MySqlConnection connect = new MySqlConnection(_connectionString))
+            {
+                DynamicParameters dynamicParameters = new DynamicParameters();
+                dynamicParameters.Add($"@p_userID", userID);
+                var res = connect.Query<long>("Proc_GetActions", dynamicParameters, commandType: CommandType.StoredProcedure);
+                return res.ToList();
+            }
+        }
     }
 
 
