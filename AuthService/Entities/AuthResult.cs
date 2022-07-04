@@ -9,7 +9,7 @@ namespace AuthService.Entities
         public string Token{ get; set; }
         public string RefreshToken{ get; set; }
         public string Message{ get; set; }
-
-        
+        public bool Success { get; set; } = true;
+        public int Role { get; set; }
     }
 }

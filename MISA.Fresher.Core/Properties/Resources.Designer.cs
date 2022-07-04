@@ -295,6 +295,15 @@ namespace MISA.Fresher.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Đăng nhập thất bại.
+        /// </summary>
+        internal static string LoginFailed {
+            get {
+                return ResourceManager.GetString("LoginFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thiếu entityID.
         /// </summary>
         internal static string MissingEntityID {

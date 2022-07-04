@@ -195,6 +195,9 @@
   <data name="List" xml:space="preserve">
     <value>Danh Sách</value>
   </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>Đăng nhập thất bại</value>
+  </data>
   <data name="MissingEntityID" xml:space="preserve">
     <value>Thiếu entityID</value>
   </data>

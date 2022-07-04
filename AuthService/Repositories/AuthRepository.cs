@@ -27,7 +27,7 @@ namespace AuthService.Repositories
         public User Login(User user)
         {
 
-            string sql = "select * from user where username = @username and password = @password";
+            string sql = "select u.*,ul.RoleID as Role from user u join role_user ul on u.ID = ul.UserID where u.username = @username and u.password = @password";
             User result = dbConnection.QuerySingleOrDefault<User>(sql, new { username = user.UserName, password = user.Password });
 
             return result;

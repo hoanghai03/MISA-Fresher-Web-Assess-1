@@ -11,20 +11,17 @@ namespace AuthService.Filter
     /// <summary>
     /// Global add header filter
     /// </summary>
-    public class AuthFilter : IResultFilter
+    public class AuthFilter : IActionFilter
     {
         public AuthFilter()
         {
         }
 
-        public void OnResultExecuted(ResultExecutedContext context)
+        public void OnActionExecuted(ActionExecutedContext context)
         {
         }
 
-        /// <summary>
-        /// CreatedBy: SWE Team
-        /// </summary>
-        public void OnResultExecuting(ResultExecutingContext context)
+        public void OnActionExecuting(ActionExecutingContext context)
         {
             var bearerToken = context.HttpContext.Request.Headers[HeaderNames.Authorization];
             if (bearerToken.ToString() != "")
@@ -40,7 +37,6 @@ namespace AuthService.Filter
                     return;
                 }
             }
-
         }
     }
 }

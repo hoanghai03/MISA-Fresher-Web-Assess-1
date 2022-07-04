@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
+using MISA.Fresher.Core.Entities.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
 
     public class AuthController : ControllerBase
@@ -37,11 +38,11 @@ namespace MISA.Fresher.Api.Controllers
                 {
                     return Ok(res);
                 }
-                return BadRequest("Đăng nhập không thành công!");
+                return BadRequest(res);
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

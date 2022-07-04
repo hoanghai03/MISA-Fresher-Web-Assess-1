@@ -29,13 +29,15 @@ namespace AuthService.Services
             {
                 authResult.Token = GenerateToken(checkLogin);
                 authResult.RefreshToken = "hoanghai";
-
+                authResult.Role = checkLogin.Role;
                 // Save refresh token
                 var saveToken = _authRepository.SaveRefreshToken(authResult.RefreshToken, checkLogin.ID);
             }
             else
             {
-                return null;
+                authResult.Message = "Đăng nhập không thành công";
+                authResult.Success = false;
+                return authResult;
             }
             return authResult;
         }
