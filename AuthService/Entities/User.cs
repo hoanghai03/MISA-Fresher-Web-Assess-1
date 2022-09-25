@@ -11,5 +11,10 @@ namespace AuthService.Entities
         public string Password { get; set; }
 
         public int Role{ get; set; }
+
+        public string Email { get; set; }
+        public bool IsConfirmEmail{ get; set; }
+
+        public DateTime ExpriedEmailConfirm { get; set; }
     }
 }

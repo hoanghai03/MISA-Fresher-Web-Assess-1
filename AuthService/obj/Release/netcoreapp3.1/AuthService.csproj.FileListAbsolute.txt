@@ -1,0 +1,10 @@
+C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\bin\Release\netcoreapp3.1\AuthService.deps.json
+C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\bin\Release\netcoreapp3.1\AuthService.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\bin\Release\netcoreapp3.1\AuthService.pdb
+C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\obj\Release\netcoreapp3.1\AuthService.csproj.AssemblyReference.cache
+C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\obj\Release\netcoreapp3.1\AuthService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\obj\Release\netcoreapp3.1\AuthService.AssemblyInfoInputs.cache
+C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\obj\Release\netcoreapp3.1\AuthService.AssemblyInfo.cs
+C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\obj\Release\netcoreapp3.1\AuthService.csproj.CoreCompileInputs.cache
+C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\obj\Release\netcoreapp3.1\AuthService.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\obj\Release\netcoreapp3.1\AuthService.pdb

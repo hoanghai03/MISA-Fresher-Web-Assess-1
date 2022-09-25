@@ -67,17 +67,18 @@ namespace MISA.Fresher.Api.Controllers
 
         [HttpGet("logout")]
         [Authorize]
-        public IActionResult Logout(Guid userID)
+        public async Task<IActionResult> Logout(Guid userID)
         {
             try
             {
-                var bearerToken = accessor.HttpContext.Request.Headers[HeaderNames.Authorization];
+                var blackList = BlackList();
+                var delete = _authService.DeleteRefreshToken(userID);
 
-                MemoryCacheHelper.Set($"{bearerToken}", 1, 20);
-                var res = _authService.DeleteRefreshToken(userID);
-                if (res!=0)
+                var result = await Task.WhenAll(blackList, delete);
+
+                if (result[1] != 0)
                 {
-                    return Ok(res);
+                    return Ok(result[1]);
                 }
                 return BadRequest("Không xóa được refresh-token");
             }
@@ -86,6 +87,14 @@ namespace MISA.Fresher.Api.Controllers
 
                 throw ex;
             }
+        }
+
+        private async Task<int> BlackList()
+        {
+            //await Task.Delay(5000);
+            var bearerToken = accessor.HttpContext.Request.Headers[HeaderNames.Authorization];
+            MemoryCacheHelper.Set($"{bearerToken}", 1, 20);
+            return 1;
         }
 
         [Authorize]
@@ -101,6 +110,21 @@ namespace MISA.Fresher.Api.Controllers
             //}
 
             return Ok("Data");
+        }
+
+        [HttpPost("register")]
+        public IActionResult Register(Register account)
+        {
+            try
+            {
+                var res = _authService.RegisterService(account);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

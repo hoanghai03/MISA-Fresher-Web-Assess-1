@@ -1,4 +1,4 @@
-using AuthService.Interfaces;
+﻿using AuthService.Interfaces;
 using AuthService.Services;
 using AuthService.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -24,6 +24,11 @@ using System.Text;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using AuthService.Filter;
+using MailService.Entities;
+using MailService.Interfaces;
+using MailService.Services;
+using System.Text.Json.Serialization;
+using MailService.Repository;
 
 namespace MISA.Fresher.Api
 {
@@ -32,10 +37,10 @@ namespace MISA.Fresher.Api
 
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration _configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -66,7 +71,8 @@ namespace MISA.Fresher.Api
             // config DI
 
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            services.AddScoped<IEmployeeService, EmployeeService>();            
+            services.AddScoped<IEmployeeService, EmployeeService>();                
+                      
             
             services.AddScoped<IAuthRepository, AuthRepository>();
 
@@ -88,6 +94,9 @@ namespace MISA.Fresher.Api
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
+            services.AddTransient<ISendMailService, SendMailService>();
+            services.AddScoped<IMailRepository, MailRepository>();
+
             #region Authen
             services.AddAuthentication(authOptions =>
             {
@@ -100,16 +109,23 @@ namespace MISA.Fresher.Api
                 jwtOptions.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateAudience = true,
-                    ValidAudience = Configuration["JwtSettings:Issuer"],
+                    ValidAudience = _configuration["JwtSettings:Issuer"],
                     ValidateIssuer = true,
-                    ValidIssuer = Configuration["JwtSettings:Issuer"],
+                    ValidIssuer = _configuration["JwtSettings:Issuer"],
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtSettings:Key"])),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:Key"])),
                     ValidateLifetime = true,
                     ClockSkew = TimeSpan.Zero
                 };
             });
             #endregion
+
+            #region mail service 
+            services.AddOptions();                                         // Kích hoạt Options
+            var mailsettings = _configuration.GetSection("MailSettings");  // đọc config
+            services.Configure<MailSetting>(mailsettings);
+            #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -12,6 +12,17 @@ namespace AuthService.Interfaces
         public bool SaveRefreshToken(string refreshToken,Guid ID);
         public int DeleteRefreshToken(Guid ID);
 
+        /// <summary>
+        /// Kiểm tra xem userName đã tồn tại trong db hay chưa
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+
+        public bool CheckExistUserName(string username);
+        public bool CheckExistEmail(string username);
+
+        public User InserUser(Register user);
+
 
     }
 }

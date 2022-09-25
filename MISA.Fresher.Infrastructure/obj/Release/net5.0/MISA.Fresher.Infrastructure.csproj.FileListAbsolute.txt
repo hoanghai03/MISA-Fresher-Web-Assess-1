@@ -1,0 +1,17 @@
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\bin\Release\net5.0\MISA.Fresher.Infrastructure.deps.json
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\bin\Release\net5.0\MISA.Fresher.Infrastructure.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\bin\Release\net5.0\ref\MISA.Fresher.Infrastructure.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\bin\Release\net5.0\MISA.Fresher.Infrastructure.pdb
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\bin\Release\net5.0\MISA.Fresher.Core.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\bin\Release\net5.0\MISA.Fresher.Core.pdb
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Release\net5.0\MISA.Fresher.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Release\net5.0\MISA.Fresher.Infrastructure.Properties.Resources.resources
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Release\net5.0\MISA.Fresher.Infrastructure.csproj.GenerateResource.cache
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Release\net5.0\MISA.Fresher.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Release\net5.0\MISA.Fresher.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Release\net5.0\MISA.Fresher.Infrastructure.AssemblyInfo.cs
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Release\net5.0\MISA.Fresher.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Release\net5.0\MISA.Fresher.Infrastructure.csproj.CopyComplete
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Release\net5.0\MISA.Fresher.Infrastructure.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Release\net5.0\ref\MISA.Fresher.Infrastructure.dll
+C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Infrastructure\obj\Release\net5.0\MISA.Fresher.Infrastructure.pdb
