@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jW0YzSG75XKRnvKFX1S+UGRxjD9SOs/BmJ9V0UTT5fuIIs8Oat0Lg13m44kTZfYBKRqqxahLVvK83mz62bvZew==",
+  "dgSpecHash": "LbHE6jZ+4afGxnADhv+S0unK0DzSirsrRVWonE7yzhnsYn1Mef5+Ja5J6704W55WOY1Q+0EqX2Q0bRUY0a1lqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MailService\\MailService.csproj",
+  "projectFilePath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MailService\\MailService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\mailkit\\3.3.0\\mailkit.3.3.0.nupkg.sha512",

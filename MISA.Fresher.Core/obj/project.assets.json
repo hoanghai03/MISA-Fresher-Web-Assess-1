@@ -6404,11 +6404,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj",
+      "projectUniqueName": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj",
       "projectName": "MISA.Fresher.Core",
-      "projectPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj",
+      "projectPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj",
       "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Core\\obj\\",
+      "outputPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",

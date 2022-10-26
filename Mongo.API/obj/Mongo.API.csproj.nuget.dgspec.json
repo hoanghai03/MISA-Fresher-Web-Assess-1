@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\Mongo.API\\Mongo.API.csproj": {}
+    "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\Mongo.API\\Mongo.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\Mongo.API\\Mongo.API.csproj": {
+    "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\Mongo.API\\Mongo.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\Mongo.API\\Mongo.API.csproj",
+        "projectUniqueName": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\Mongo.API\\Mongo.API.csproj",
         "projectName": "Mongo.API",
-        "projectPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\Mongo.API\\Mongo.API.csproj",
+        "projectPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\Mongo.API\\Mongo.API.csproj",
         "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\Mongo.API\\obj\\",
+        "outputPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\Mongo.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",

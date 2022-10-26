@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AXV6HqQns/VjOQCNuNPYKYC8YqljQSlBPJPdjz7vhSz90PmmCvIjGALgqybjMY0q7DXrfpy3O9iyWGa0teyofg==",
+  "dgSpecHash": "76ZzUccxcrNZUYxf5KfyLmxvaFV8i1CJnSqTiC1Aaejgf4bubvDPFob3dcIWRnVuNYP5OpTJY5JHeiMXUZ+New==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\Messenger.Api\\Messenger.Api.csproj",
+  "projectFilePath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\Messenger.Api\\Messenger.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

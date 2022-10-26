@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "okwhfYSjRh0do22QGtqPOHhaIkf7OvX5Sbp6+Kt8jsSRroiaxd0DcAr2E/U4QgVbEBuYgT2H6iyoBd9PMDHwfw==",
+  "dgSpecHash": "1VCJCmM+CW9eu71vy7i2t+WYwryO3jtDyz1y5HXwMsVSKxrWCOzZ9FUy9eoJ2gTsRMiYS8HWNfOUziCs7kuyHw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MemoryCache.Api\\MemoryCache.Api.csproj",
+  "projectFilePath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MemoryCache.Api\\MemoryCache.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

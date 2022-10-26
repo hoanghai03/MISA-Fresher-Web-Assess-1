@@ -12,3 +12,17 @@ C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\
 C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.dll
 C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\ref\MISA.Fresher.Core.dll
 C:\Users\hoang\source\repos\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.pdb
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\bin\Debug\net5.0\MISA.Fresher.Core.deps.json
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\bin\Debug\net5.0\MISA.Fresher.Core.dll
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\bin\Debug\net5.0\ref\MISA.Fresher.Core.dll
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\bin\Debug\net5.0\MISA.Fresher.Core.pdb
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.csproj.AssemblyReference.cache
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.Properties.Resources.resources
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.csproj.GenerateResource.cache
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.AssemblyInfoInputs.cache
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.AssemblyInfo.cs
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.csproj.CoreCompileInputs.cache
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.dll
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\ref\MISA.Fresher.Core.dll
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\MISA.Fresher.Core\obj\Debug\net5.0\MISA.Fresher.Core.pdb

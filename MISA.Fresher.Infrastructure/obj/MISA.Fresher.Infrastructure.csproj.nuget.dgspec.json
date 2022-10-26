@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Infrastructure\\MISA.Fresher.Infrastructure.csproj": {}
+    "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Infrastructure\\MISA.Fresher.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj": {
+    "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj",
+        "projectUniqueName": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj",
         "projectName": "MISA.Fresher.Core",
-        "projectPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj",
+        "projectPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj",
         "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Core\\obj\\",
+        "outputPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -76,14 +76,14 @@
         }
       }
     },
-    "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Infrastructure\\MISA.Fresher.Infrastructure.csproj": {
+    "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Infrastructure\\MISA.Fresher.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Infrastructure\\MISA.Fresher.Infrastructure.csproj",
+        "projectUniqueName": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Infrastructure\\MISA.Fresher.Infrastructure.csproj",
         "projectName": "MISA.Fresher.Infrastructure",
-        "projectPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Infrastructure\\MISA.Fresher.Infrastructure.csproj",
+        "projectPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Infrastructure\\MISA.Fresher.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Infrastructure\\obj\\",
+        "outputPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -100,8 +100,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj": {
-                "projectPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj"
+              "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj": {
+                "projectPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj"
               }
             }
           }

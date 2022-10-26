@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/O2xF1G4VEgquh7kDve3OvKAOH6Ucv5kuvl6eCldacQfL9rBehH9H5quohtzdYEbDR3DVdrG46QaayL/joShgA==",
+  "dgSpecHash": "0HqlOGDNkrNcSkAAToLGyah4iUPd/tC9WLD9qe5vktqkMkzZGDMp6oU1lG/EMXYnBA3NdFsc914NuhnzheSDVg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\AuthService\\AuthService.csproj",
+  "projectFilePath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\AuthService\\AuthService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

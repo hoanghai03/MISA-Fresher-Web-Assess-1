@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YH37CUv31+ydc9wrRIX/G2l8HwozL+8uR340GDIHdjol7aXxf8fIHY9fv+oVKEUm4HmPlhX0rrFmo4kREmNN+g==",
+  "dgSpecHash": "0DUn62n2a1MeiSXs8EE5/SmMVGxPxq0E24zogUE0D3DXzc2v96myeQ9DvtNZHghumOQ+zIGHNOSMSJ1QTMejGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj",
+  "projectFilePath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Core\\MISA.Fresher.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\epplus\\5.8.4\\epplus.5.8.4.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

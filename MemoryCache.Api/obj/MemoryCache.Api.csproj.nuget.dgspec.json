@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MemoryCache.Api\\MemoryCache.Api.csproj": {}
+    "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MemoryCache.Api\\MemoryCache.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MemoryCache.Api\\MemoryCache.Api.csproj": {
+    "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MemoryCache.Api\\MemoryCache.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MemoryCache.Api\\MemoryCache.Api.csproj",
+        "projectUniqueName": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MemoryCache.Api\\MemoryCache.Api.csproj",
         "projectName": "MemoryCache.Api",
-        "projectPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MemoryCache.Api\\MemoryCache.Api.csproj",
+        "projectPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MemoryCache.Api\\MemoryCache.Api.csproj",
         "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MemoryCache.Api\\obj\\",
+        "outputPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MemoryCache.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",

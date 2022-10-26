@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B7/B4RTkP9AQVdqwhcNji3QzRVasiiGGbo/YujmKMAdVZPis19jfAcnWYCo5sZS9Won+s/cATzF4VFyZq+LB3g==",
+  "dgSpecHash": "2qmkzIVZZ6xstvP3/UhYIKW4SqDci8shGBTnJ/n68vnM+JhUQC3Qz2r12NHcI/eUL56qfTOjmwbiYAxyrM9Y4g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\MISA.Fresher.Api\\MISA.Fresher.Api.csproj",
+  "projectFilePath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\MISA.Fresher.Api\\MISA.Fresher.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\epplus\\5.8.4\\epplus.5.8.4.nupkg.sha512",

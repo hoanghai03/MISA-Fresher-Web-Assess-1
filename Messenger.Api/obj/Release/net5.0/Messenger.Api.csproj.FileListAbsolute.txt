@@ -26,3 +26,4 @@ C:\Users\hoang\source\repos\MISA.Fresher.Api\Messenger.Api\obj\Release\net5.0\Me
 C:\Users\hoang\source\repos\MISA.Fresher.Api\Messenger.Api\obj\Release\net5.0\ref\Messenger.Api.dll
 C:\Users\hoang\source\repos\MISA.Fresher.Api\Messenger.Api\obj\Release\net5.0\Messenger.Api.pdb
 C:\Users\hoang\source\repos\MISA.Fresher.Api\Messenger.Api\obj\Release\net5.0\Messenger.Api.genruntimeconfig.cache
+C:\Users\hoang\source\repos\MISA.Fresher.Api\Messenger.Api\obj\Release\net5.0\Messenger.Api.csproj.AssemblyReference.cache

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l6Jqi/DBcMmnaulVCt0RCJPkJxF+ZE8amsvvo5N3GZJZ4I9u/sz2tAK9oVvWH5xSLzSYD9JbMw38eeMnJcWgEg==",
+  "dgSpecHash": "s9kd71joZ5AjvI19+y1WTIU4mGoaODcI/5bsUeekO6hxOd8zDytYvLdaeRVWWbjzI0h2iVgl+TgXuNaBuDbnxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\Mongo.API\\Mongo.API.csproj",
+  "projectFilePath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\Mongo.API\\Mongo.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",

@@ -8,3 +8,13 @@ C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\obj\Debug\netcoreapp3.1
 C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\obj\Debug\netcoreapp3.1\AuthService.dll
 C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\obj\Debug\netcoreapp3.1\AuthService.pdb
 C:\Users\hoang\source\repos\MISA.Fresher.Api\AuthService\obj\Debug\netcoreapp3.1\AuthService.csproj.AssemblyReference.cache
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\AuthService\bin\Debug\netcoreapp3.1\AuthService.deps.json
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\AuthService\bin\Debug\netcoreapp3.1\AuthService.dll
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\AuthService\bin\Debug\netcoreapp3.1\AuthService.pdb
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\AuthService\obj\Debug\netcoreapp3.1\AuthService.csproj.AssemblyReference.cache
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\AuthService\obj\Debug\netcoreapp3.1\AuthService.GeneratedMSBuildEditorConfig.editorconfig
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\AuthService\obj\Debug\netcoreapp3.1\AuthService.AssemblyInfoInputs.cache
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\AuthService\obj\Debug\netcoreapp3.1\AuthService.AssemblyInfo.cs
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\AuthService\obj\Debug\netcoreapp3.1\AuthService.csproj.CoreCompileInputs.cache
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\AuthService\obj\Debug\netcoreapp3.1\AuthService.dll
+D:\MisaWebFesher\vuejs-fesher\deploy\MISA.Fresher.Api\AuthService\obj\Debug\netcoreapp3.1\AuthService.pdb

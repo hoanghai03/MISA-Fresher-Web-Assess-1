@@ -198,11 +198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\Messenger.Api\\Messenger.Api.csproj",
+      "projectUniqueName": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\Messenger.Api\\Messenger.Api.csproj",
       "projectName": "Messenger.Api",
-      "projectPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\Messenger.Api\\Messenger.Api.csproj",
+      "projectPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\Messenger.Api\\Messenger.Api.csproj",
       "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\Messenger.Api\\obj\\",
+      "outputPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\Messenger.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",

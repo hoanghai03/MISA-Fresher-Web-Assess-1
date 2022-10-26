@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\AuthService\\AuthService.csproj": {}
+    "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\AuthService\\AuthService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\AuthService\\AuthService.csproj": {
+    "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\AuthService\\AuthService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\AuthService\\AuthService.csproj",
+        "projectUniqueName": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\AuthService\\AuthService.csproj",
         "projectName": "AuthService",
-        "projectPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\AuthService\\AuthService.csproj",
+        "projectPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\AuthService\\AuthService.csproj",
         "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hoang\\source\\repos\\MISA.Fresher.Api\\AuthService\\obj\\",
+        "outputPath": "D:\\MisaWebFesher\\vuejs-fesher\\deploy\\MISA.Fresher.Api\\AuthService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
